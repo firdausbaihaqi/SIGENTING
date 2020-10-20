@@ -17,4 +17,5 @@ mix.js('resources/js/app.js', 'public/js')
         .options({
             processCssUrls: false,
             postCss: [tailwindcss('./tailwind.config.js')],
-        });
+        })
+            .browserSync('127.0.0.1:8000');
