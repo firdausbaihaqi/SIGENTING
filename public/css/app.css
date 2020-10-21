@@ -21689,6 +21689,18 @@ video {
   padding-bottom: 0.75rem;
 }
 
+.card {
+  --bg-opacity: 1;
+  background-color: #f7fafc;
+  background-color: rgba(247, 250, 252, var(--bg-opacity));
+  width: 33.333333%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  border-radius: 0.5rem;
+}
+
 /* halaman login */
 
 .center {
