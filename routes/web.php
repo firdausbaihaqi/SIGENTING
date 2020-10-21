@@ -19,3 +19,7 @@ Route::get('/kontak', 'BerandaController@kontak');
 
 
 Route::get('/bidan', 'BidanController@index');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
