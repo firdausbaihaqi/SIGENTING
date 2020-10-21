@@ -9,7 +9,6 @@ class BidanController extends Controller
 {
     public function index()
     {
-        $bidan = Bidan::get();
-        dd($bidan);
+        return ('selamat datang ');
     }
 }

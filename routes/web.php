@@ -8,7 +8,8 @@ Route::get('/about', 'BerandaController@about');
 Route::get('/kontak', 'BerandaController@kontak');
 
 
-Route::get('/bidan', 'BidanController@index');
+
+Route::get('/dasboard/bidan', 'BidanController@index');
 
 Auth::routes();
 
