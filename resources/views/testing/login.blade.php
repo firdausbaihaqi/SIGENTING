@@ -24,9 +24,9 @@
             <p class="text-gray-700 mt-6">mohon masuk terlebih dahulu untuk melanjutkan</p>
                <form action="" class="mt-4 block">
                     <label for="email" class="label">Email atau Nomor Telepon</label>
-                   <input type="text" class="input-text" name="email" id="">
+                   <input type="text" class="input-text focus:border-blue-400" name="email" id="">
                    <label for="password" class="label">Kata sandi</label>
-                   <input type="password" class="input-text" name="password" id="">
+                   <input type="password" class="input-text focus:outline-none focus:shadow-outline focus:border-blue-300" name="password" id="">
                    <input type="submit" value="Masuk" class="btn-login text-white mt-12">
                </form>
             <p class="mt-6 label text-center">belum punya akun? Silahkan hubungi posyandu terdekat</p>
