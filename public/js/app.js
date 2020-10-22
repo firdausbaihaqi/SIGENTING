@@ -49875,7 +49875,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-throw new Error("Module build failed (from ./node_modules/css-loader/index.js):\nModuleBuildError: Module build failed (from ./node_modules/postcss-loader/src/index.js):\nSyntaxError\n\n(9905:3) `@apply` cannot be used with .rounded-lg because .rounded-lg is included in multiple rulesets.\n\n \u001b[90m 9903 | \u001b[39m\u001b[90m/* halaman login */\u001b[39m\n \u001b[90m 9904 | \u001b[39m\u001b[33m.card-login\u001b[39m \u001b[33m{\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 9905 | \u001b[39m  \u001b[36m@apply\u001b[39m bg-gray-100 w-1/3 py-4 px-6 rounded-lg\u001b[33m;\u001b[39m\n \u001b[90m      | \u001b[39m  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 9906 | \u001b[39m\u001b[33m}\u001b[39m\n \u001b[90m 9907 | \u001b[39m\u001b[33m.card-login\u001b[39m \u001b[33m.title\u001b[39m \u001b[33m{\u001b[39m\n\n    at C:\\project\\sigenting\\node_modules\\webpack\\lib\\NormalModule.js:316:20\n    at C:\\project\\sigenting\\node_modules\\loader-runner\\lib\\LoaderRunner.js:367:11\n    at C:\\project\\sigenting\\node_modules\\loader-runner\\lib\\LoaderRunner.js:233:18\n    at context.callback (C:\\project\\sigenting\\node_modules\\loader-runner\\lib\\LoaderRunner.js:111:13)\n    at C:\\project\\sigenting\\node_modules\\postcss-loader\\src\\index.js:207:9");
+// removed by extract-text-webpack-plugin
 
 /***/ }),
 
@@ -49886,8 +49886,8 @@ throw new Error("Module build failed (from ./node_modules/css-loader/index.js):\
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\project\sigenting\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\project\sigenting\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /mnt/sda3/xampp/htdocs/SIGENTING/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /mnt/sda3/xampp/htdocs/SIGENTING/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
