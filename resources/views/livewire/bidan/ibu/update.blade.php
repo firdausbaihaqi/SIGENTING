@@ -26,7 +26,7 @@
 
                         <input type="hidden" wire:model="id_ibu">
 
-                        <label for="exampleFormControlInput1">Alamat</label>
+                        <label for="exampleFormControlInput1">Nama</label>
 
                         <input type="text" class="form-control" wire:model="nama" id="exampleFormControlInput1" placeholder="Masukan Nama">
 

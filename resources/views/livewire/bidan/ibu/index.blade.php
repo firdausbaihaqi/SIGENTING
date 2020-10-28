@@ -18,7 +18,9 @@
                     <th>Action</th>
                 </tr>
             </thead>
+
             <tbody>
+
                 @foreach($ibu as $item)
                 <tr>
                     <td>{{ $item->id }}</td>

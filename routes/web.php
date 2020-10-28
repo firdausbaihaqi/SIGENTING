@@ -22,6 +22,7 @@ Route::get('/kontak', 'BerandaController@kontak');
 // });
 
 Route::view('/bidan', 'livewire.ibu');
+Route::view('/anak', 'livewire.anak');
 
 
 Auth::routes();

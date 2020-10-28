@@ -18,8 +18,11 @@ class Index extends Component
 
     public function render()
     {
-        $ibu = Ibu::orderBy('id', 'desc')->paginate(4);
-        return view('livewire.bidan.ibu.index', ['ibu' => $ibu]);
+        $keyword = '%' . $this->search . '%';
+        return view('livewire.bidan.ibu.index', [
+            'ibu' => Ibu::where('nama', 'like', $keyword)
+                ->orderBy('id', 'desc')->paginate(10)
+        ]);
     }
 
     public function resetInput()
@@ -45,6 +48,7 @@ class Index extends Component
 
     public function edit($id)
     {
+
         $this->updateMode = true;
         $ibu = Ibu::where('id', $id)->first();
 

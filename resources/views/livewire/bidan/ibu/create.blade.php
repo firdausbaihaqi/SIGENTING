@@ -1,5 +1,5 @@
 <button type="button" wire:click.prevent="resetInput()" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-    Tambah Data Ibu
+    Tambah Data Anak
 </button>
 <!-- Modal -->
 <div wire:ignore.self class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
