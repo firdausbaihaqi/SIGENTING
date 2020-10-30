@@ -139,7 +139,7 @@
         const modalClose = document.getElementById('modalClose');
 
 
-        modal.style.display = "block";
+        // modal.style.display = "block";
 
         modalBtn.onclick = function() {
             modal.style.display = "block";
