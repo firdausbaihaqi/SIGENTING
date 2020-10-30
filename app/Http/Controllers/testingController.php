@@ -9,6 +9,6 @@ class testingController extends Controller
     public function index()
     {
         // folder.namaFile
-        return view("testing.ibuListData");
+        return view("testing.bayiListData");
     }
 }
