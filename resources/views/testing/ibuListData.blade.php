@@ -40,7 +40,6 @@
 
         </div>
 
-
         <!-- iki tabel -->
         <div class="w-full px-4">
             <table class="table">
@@ -94,16 +93,80 @@
                         </td>
                     </tr>
 
-
                 </tbody>
             </table>
+        </div>
+        <br>
+
+        <!-- Trigger/Open The Modal -->
+        <button id="modalBtn" class="button bg-blue-500 text-white">Open Modal</button>
+
+        <!-- The Modal -->
+        <div id="Modal" class="modal-parent">
+
+            <div class="modal-container">
+                <div class="modal-header">
+                    <h4 class="text-white text-lg pl-4">Title</h4>
+                    <button id="modalClose" class="pr-4 font-bold text-white text-3xl hover:text-gray-600 focus:outline-none">&times;</button>
+                </div>
+
+                <div class="modal-body p-4 center">
+                    <form action="" class="w-2/3 mt-4">
+                        <div class="form-group">
+                            <label for="nama" class="label pl-1">Nama</label>
+                            <input type="text" class="input-text focus:border-blue-500" name="nama">
+                        </div>
+                        <div class="flex">
+                            <div class="form-group mr-2">
+                                <label for="alamat" class="label pl-1">Alamat</label>
+                                <input type="text" class="input-text focus:border-blue-500" name="alamat">
+                            </div>
+                            <div class="form-group ml-2">
+                                <label for="telepon" class="label pl-1">Telepon</label>
+                                <input type="text" class="input-text focus:border-blue-500" name="telepon">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="label pl-1">Email</label>
+                            <input type="email" class="input-text focus:border-blue-500" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="riwayatPenyakit" class="label pl-1">Riwayat Penyakit</label>
+                            <input type="text" class="input-text focus:border-blue-500" name="riwayatPenyakit">
+                        </div>
+                        <button type="submit" class="mt-3 button text-blue-100 bg-blue-500 hover:bg-blue-700 duration-200 float-right">Tambahkan</button>
+                    </form>
+                </div>
+
+            </div>
 
         </div>
-
-
+        <br>
 
 
     </div>
+
+    <script>
+        const modal = document.getElementById('Modal');
+        const modalBtn = document.getElementById('modalBtn');
+        const modalClose = document.getElementById('modalClose');
+
+
+        modal.style.display = "block";
+        modal.style.opacity = "1";
+
+        modalBtn.onclick = function() {
+            // modal.classList.toggle('show');
+            modal.style.display = "block";
+            modal.style.opacity = "1";
+        }
+
+        modalClose.onclick = function() {
+            // modal.classList.add('hide');
+            modal.style.display = "none"
+            modal.style.opacity = "0";
+        }
+    </script>
 </body>
 
 </html>
