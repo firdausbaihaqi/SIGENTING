@@ -15,6 +15,13 @@ class Index extends Component
     public $updateMode = false;
     public  $search = '';
 
+    protected $rules = [
+        'nama' => 'required',
+        'alamat' => 'required',
+        'no_hp' => 'required|numeric',
+
+    ];
+
 
     public function render()
     {
@@ -60,24 +67,16 @@ class Index extends Component
 
     public function update()
     {
-        $validateData = $this->validate([
-            'nama' => 'required',
-            'alamat' => 'required',
-            'no_hp' => 'required|numeric',
-
-        ]);
+        $validateData = $this->validate();
 
         if ($this->id_ibu) {
 
             $ibu = Ibu::find($this->id_ibu);
-            $ibu->update([
-                'nama' => $this->nama,
-                'alamat' => $this->alamat,
-                'no_hp' => $this->no_hp,
-            ]);
+            $ibu->update($validateData);
             $this->updateMode = false;
             session()->flash('message', 'Data Ibu Berhasil di Update');
             $this->resetInput();
+            $this->emit('userUpdate');
         }
     }
 

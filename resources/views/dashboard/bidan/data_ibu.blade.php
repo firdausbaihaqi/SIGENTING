@@ -42,12 +42,10 @@
             <td>{{$item->no_hp}}</td>
             <td>
                 <!-- Button trigger modal -->
-                <button type="button" id="btnEdit" class="btn btn-warning btn-sm" data-toggle="modal"
-                    data-target="#edit">
+                <button type="button" id="btnEdit" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#edit">
                     Edit
                 </button>
-                <button type="button" id="btnDelete" class="btn btn-danger btn-sm" data-toggle="modal"
-                    data-target="#deleteModal" data-id="{{ $item }}">
+                <button type="button" id="btnDelete" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteModal" data-id="{{ $item }}">
                     Hapus
                 </button>
             </td>
@@ -61,8 +59,7 @@
 </div>
 
 {{-- Add Modal --}}
-<div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
+<div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -123,8 +120,7 @@
 </div>
 
 <!-- Delete Modal -->
-<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -138,8 +134,7 @@
                 <p id="alamat"></p>
             </div>
             <div class="modal-footer">
-                <button type="button" id="modalDeleteTidak" class="btn btn-secondary"
-                    data-dismiss="modal">Tidak</button>
+                <button type="button" id="modalDeleteTidak" class="btn btn-secondary" data-dismiss="modal">Tidak</button>
                 <button type="button" id="modalDeleteIya" class="btn btn-primary">Iya</button>
             </div>
         </div>
@@ -147,40 +142,40 @@
 </div>
 @endsection
 
-@section('scriptModal')
+@section('script')
 <script>
-    $(document).ready(function(){
+    $(document).ready(function() {
 
         //Delete 
         var dataIbu;
-        $('body').on('click', '#btnDelete', function(){
+        $('body').on('click', '#btnDelete', function() {
             dataIbu = $(this).data('id')
             console.log(dataIbu['id']);
             $("#nama").val('Nama: ');
-            $('#alamat').val('Alamat: '+dataIbu['alamat']);
+            $('#alamat').val('Alamat: ' + dataIbu['alamat']);
 
         })
-        $('#modalDeleteIya').click(function(e){
+        $('#modalDeleteIya').click(function(e) {
             e.preventDefault();
             var id = dataIbu['id']
             console.log(id);
             $.ajaxSetup({
-                headers : {
+                headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 }
-            })                 
+            })
             $.ajax({
-                url : '/dashboard/bidan/data/ibu/'+id+'/delete',
+                url: '/dashboard/bidan/data/ibu/' + id + '/delete',
                 method: 'DELETE',
                 success: function(result) {
-                    console.log(result);                    
+                    console.log(result);
                     $('#deleteModal').modal('hide');
                     location.reload();
                 },
-                
+
             });
         });
 
-    })    
+    })
 </script>
 @endsection

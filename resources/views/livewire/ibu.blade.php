@@ -3,6 +3,7 @@
 
 <head>
     <title>Data Ibu</title>
+    <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
     <script src="{{ asset('js/bootstrap/app.js') }}" defer></script>
     <link href="{{ asset('css/bootstrap/app.css') }}" rel="stylesheet">
     @livewireStyles
@@ -33,7 +34,11 @@
         window.livewire.on('userStore', () => {
             $('#exampleModal').modal('hide');
         });
+        window.livewire.on('userUpdate', () => {
+            $('#updateModal').modal('hide');
+        });
     </script>
+
 </body>
 
 </html>

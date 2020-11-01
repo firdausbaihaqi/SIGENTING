@@ -1,5 +1,4 @@
 <!-- Modal -->
-
 <div wire:ignore.self class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 
     <div class="modal-dialog" role="document">
@@ -30,7 +29,7 @@
 
                         <input type="text" class="form-control" wire:model="nama" id="exampleFormControlInput1" placeholder="Masukan Nama">
 
-                        @error('name') <span class="text-danger">{{ $message }}</span>@enderror
+                        @error('nama') <span class="text-danger">{{ $message }}</span>@enderror
 
                     </div>
 
@@ -62,7 +61,7 @@
 
                 <button type="button" wire:click.prevent="cancel()" class="btn btn-secondary" data-dismiss="modal">Close</button>
 
-                <button type="button" wire:click.prevent="update()" class="btn btn-primary" data-dismiss="modal">Save changes</button>
+                <button type="button" wire:click.prevent="update()" class="btn btn-primary">Save changes</button>
 
             </div>
 
