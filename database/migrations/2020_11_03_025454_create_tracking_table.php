@@ -15,6 +15,8 @@ class CreateTrackingTable extends Migration
     {
         Schema::create('tracking', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('id_status_kesehatan_anak')->constrained('status_kesehatan_anak');
+            $table->enum('status_stunting', ['YA', 'TIDAK']);
             $table->timestamps();
         });
     }

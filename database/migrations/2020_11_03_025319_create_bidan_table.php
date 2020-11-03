@@ -15,6 +15,12 @@ class CreateBidanTable extends Migration
     {
         Schema::create('bidan', function (Blueprint $table) {
             $table->id();
+            $table->string('nama');
+            $table->string('username', 30);
+            $table->string('password');
+            $table->string('alamat');
+            $table->string('no_hp');
+            $table->string('nama');
             $table->timestamps();
         });
     }

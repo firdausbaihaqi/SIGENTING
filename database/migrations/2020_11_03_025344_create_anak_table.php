@@ -15,6 +15,10 @@ class CreateAnakTable extends Migration
     {
         Schema::create('anak', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('id_ibu')->constrained('ibu');
+            $table->string('nama');
+            $table->enum('jenis_kelamin', ['Laki-Laki', 'Perempuan']);
+            $table->date('tgl_lahir');
             $table->timestamps();
         });
     }

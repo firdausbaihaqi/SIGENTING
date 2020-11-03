@@ -15,6 +15,10 @@ class CreatePostTable extends Migration
     {
         Schema::create('post', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('id_bidan')->constrained('bidan');
+            $table->string('judul');
+            $table->string('thumbnail');
+            $table->text('isi');
             $table->timestamps();
         });
     }

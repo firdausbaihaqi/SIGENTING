@@ -15,6 +15,8 @@ class CreateStatusKesehatanAnakTable extends Migration
     {
         Schema::create('status_kesehatan_anak', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('id_ibu')->constrained('ibu');
+            $table->string('riwayat_penyakit');
             $table->timestamps();
         });
     }

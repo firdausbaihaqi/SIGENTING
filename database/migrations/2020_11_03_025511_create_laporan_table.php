@@ -15,6 +15,10 @@ class CreateLaporanTable extends Migration
     {
         Schema::create('laporan', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('id_ibu')->constrained('ibu');
+            $table->foreignId('id_anak')->constrained('anak');
+            $table->foreignId('id_status_kesehatan_ibu')->constrained('status_kesehatan_ibu');
+            $table->foreignId('id_status_kesehatan_anak')->constrained('status_kesehatan_anak');
             $table->timestamps();
         });
     }
