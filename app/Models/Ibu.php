@@ -3,12 +3,13 @@
 namespace App\Models;
 
 use App\Models\Anak;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Ibu extends Model
+class Ibu extends Authenticatable
 {
     protected $table = 'ibu_hamil';
-    protected $fillable = ['nama', 'alamat', 'no_hp'];
+    protected $guard = [];
+    // protected $fillable = ['nama', 'alamat', 'no_hp'];
 
     public function anak()
     {

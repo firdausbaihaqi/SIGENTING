@@ -41,6 +41,15 @@ return [
             'provider' => 'users',
         ],
 
+        'bidan' => [
+            'driver'    => 'session',
+            'provider'  => 'bidan',
+        ],
+        'ibu' => [
+            'driver'    => 'session',
+            'provider'  => 'ibu',
+        ],
+
         'api' => [
             'driver' => 'token',
             'provider' => 'users',
@@ -70,6 +79,15 @@ return [
             'driver' => 'eloquent',
             'model' => App\User::class,
         ],
+
+        'bidan' => [
+            'driver' => 'eloquent',
+            'model'  => App\Models\Bidan::class,
+        ],
+        'ibu' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Ibu::class,
+        ]
 
         // 'users' => [
         //     'driver' => 'database',

@@ -24,17 +24,15 @@
             <p class="text-gray-700 mt-6">mohon masuk terlebih dahulu untuk melanjutkan</p>
             <form action="{{ route('login') }}" method="POST" class="mt-4 block">
                 @csrf
-                <label for="email" class="label">Email atau Nomor Telepon</label>
-                <input type="text" class="input-text focus:outline-none focus:shadow-outline focus:border-blue-300"
-                    name="email" id="">
-                @error('email')
+                <label for="username" class="label">Username atau Nomor Telepon</label>
+                <input type="text" class="input-text focus:outline-none focus:shadow-outline focus:border-blue-300" name="username" id="">
+                @error('username')
                 <span class="text-red-700 text-sm">
                     <p>{{$message}}</p>
                 </span>
                 @enderror
                 <label for="password" class="label">Kata sandi</label>
-                <input type="password" class="input-text focus:outline-none focus:shadow-outline focus:border-blue-300"
-                    name="password" id="">
+                <input type="password" class="input-text focus:outline-none focus:shadow-outline focus:border-blue-300" name="password" id="">
                 @error('password')
                 <span class="text-red-700 text-sm">
                     <p>{{$message}}</p>
