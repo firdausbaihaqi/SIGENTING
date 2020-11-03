@@ -7,7 +7,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class Ibu extends Authenticatable
 {
-    protected $table = 'ibu_hamil';
+    protected $table = 'ibu';
     protected $guard = [];
     // protected $fillable = ['nama', 'alamat', 'no_hp'];
 

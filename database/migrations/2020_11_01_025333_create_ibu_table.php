@@ -15,9 +15,9 @@ class CreateIbuTable extends Migration
     {
         Schema::create('ibu', function (Blueprint $table) {
             $table->id();
-            $table->string('nama', 30);
+            $table->string('nama');
             $table->string('username', 30);
-            $table->string('password', 30);
+            $table->string('password');
             $table->string('alamat');
             $table->string('no_hp', 20);
             $table->timestamps();
