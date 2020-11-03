@@ -8,7 +8,8 @@ class BerandaController extends Controller
 {
     public function index()
     {
-        echo "ini beranda";
+        return view("testing.beranda");
+        // echo "ini beranda";
     }
 
     public function about()
