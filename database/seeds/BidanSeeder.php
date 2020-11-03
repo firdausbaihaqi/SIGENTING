@@ -13,15 +13,13 @@ class BidanSeeder extends Seeder
     public function run()
     {
 
-        \App\User::create([
+        \App\Models\Bidan::create([
 
-            'nama'      => 'Siapa Ya?',
-            'username'  => 'spy123',
-            'email'     => 'spy1@app.id',
+            'nama'      => 'angger',
+            'username'  => 'angger',
+            'password'  => Hash::make('angger123'),
             'alamat'    => 'jalan kemana',
-            'no_hp'     => '12345',
-            'is_bidan'  =>  true,
-            'password'  => Hash::make('siapaya123')
+            'no_hp'     => '123',
         ]);
     }
 }
