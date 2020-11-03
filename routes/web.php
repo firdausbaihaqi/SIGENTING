@@ -21,6 +21,13 @@ Route::group(['prefix' => '/bidan'], function () {
     Route::get('/tracking', 'BidanController@showTracking')->name('bidan.tracking');
 });
 
+
+Route::group(['prefix' => 'ibu'], function () {
+    Route::get('/', function () {
+        return "Hello Ibu";
+    });
+});
+
 Route::view('/bidan', 'livewire.ibu');
 Route::view('/anak', 'livewire.anak');
 

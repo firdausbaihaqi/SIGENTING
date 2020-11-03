@@ -1,6 +1,5 @@
 <!-- Modal -->
-<div wire:ignore.self class="modal fade" id="updateModal" tabindex="-1" role="dialog"
-    aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div wire:ignore.self class="modal fade" id="updateModal" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -13,7 +12,7 @@
                 <form>
                     <div wire:ignore class="form-group">
                         <label for="nama_ibu">Nama Ibu</label><br>
-                        <select name="" class="upda form-control" wire:model="id_ibu">
+                        <select class="form-control" wire:model="id_ibu">
                             @foreach($ibu as $item)
                             <option selected value="{{ $item->id }}"> {{ $item->nama }} </option>
                             @endforeach()
@@ -22,8 +21,7 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlInput1">Nama</label>
-                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Masukan Nama"
-                            wire:model="nama">
+                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Masukan Nama" wire:model="nama">
                         @error('nama') <span class="text-danger error">{{ $message }}</span>@enderror
                     </div>
                     <div class="form-group">
@@ -44,8 +42,7 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" wire:click.prevent="cancel()" class="btn btn-secondary lg:mr-2"
-                    data-dismiss="modal">Close</button>
+                <button type="button" wire:click.prevent="cancel()" class="btn btn-secondary lg:mr-2" data-dismiss="modal">Close</button>
                 <button type="button" wire:click.prevent="update()" class="btn btn-primary">Save
                     changes</button>
             </div>

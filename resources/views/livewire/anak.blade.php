@@ -4,14 +4,14 @@
 
 @section('style')
 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+@livewireStyles
 <style>
-    @media (min-width: 768px) {
+    @media (max-width: 767.98px) {
         .btn {
-            margin-top: 10px;
+            margin: 3px;
         }
     }
 </style>
-@livewireStyles
 @endsection
 
 @section('content')

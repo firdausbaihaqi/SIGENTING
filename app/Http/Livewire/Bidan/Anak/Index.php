@@ -47,6 +47,7 @@ class Index extends Component
             'jenis_kelamin' => $this->jenis_kelamin,
             'tgl_lahir' => $this->tgl_lahir,
         ]);
+        session()->flash('message', 'Users Added Successfully.');
         $this->resetInput();
         $this->emit('userStore');
     }
@@ -76,7 +77,7 @@ class Index extends Component
         $data = $this->validate();
         $anak = Anak::find($this->id_anak);
         $anak->update($data);
-
+        session()->flash('message', 'Users Updated Successfully.');
         $this->updatedMode = false;
         $this->resetInput();
         $this->emit('userUpdate');

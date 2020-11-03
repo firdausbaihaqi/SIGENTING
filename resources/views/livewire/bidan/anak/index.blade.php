@@ -29,8 +29,7 @@
                         <td>{{ $item->jenis_kelamin }}</td>
                         <td>{{ $item->tgl_lahir }}</td>
                         <td>
-                            <button data-toggle="modal" data-target="#updateModal" wire:click="edit({{ $item->id }})"
-                                class="btn btn-primary btn-sm">Edit</button>
+                            <button data-toggle="modal" data-target="#updateModal" wire:click="edit({{ $item->id }})" class="btn btn-primary btn-sm">Edit</button>
                             <button wire:click="delete({{ $item->id }})" class="btn btn-danger btn-sm">Delete</button>
                         </td>
                     </tr>
@@ -51,6 +50,10 @@
             placeholder: 'Select an option'
         });
 
+        $('.searchFormUpdate').select2({
+            dropdownParent: $("#updateModal"),
+            placeholder: 'Select an option'
+        });
 
         $(document).on('change', '.js-example-basic-single', function(e) {
             @this.set('id_ibu', e.target.value);
@@ -58,21 +61,13 @@
 
         $(document).on('click', '#tambahAnak', function(e) {
             e.preventDefault();
-            @this.set('id_ibu', null);
+            @this.set('id_ibu', -1);
             $('.js-example-basic-single').select2({
                 placeholder: 'Select an option'
             });
         });
 
     });
-
-    // document.addEventListener("livewire:load", function(event) {
-    //     window.livewire.hook('afterDomUpdate', () => {
-    //         $('.js-example-basic-single').select2({
-    //             placeholder: 'Select an option',
-    //         });
-    //     });
-    // });
 </script>
 
 @endpush
