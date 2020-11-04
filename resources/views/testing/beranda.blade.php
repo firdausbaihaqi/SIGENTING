@@ -26,7 +26,7 @@
             </div>
         </div>
     </nav>
-    <main class="flex justify-between items-center w-full pt-32 px-16">
+    <main class="flex justify-between items-center w-full pt-32 px-16 border border-gray-700 flex-wrap">
         <div class="w-2/6">
             <h1 class="text-4xl font-bold pb-4">
                 Sistem Informasi Pencegahan Stunting
@@ -40,14 +40,60 @@
             </div>
         </div>
         <div class="w-2/5">
-            <div class="bg-green-400 w-full h-64 grid place-items-center">
-                <p>slideshow berita</p>
+            <div id="slideshow" class="border border-gray-700 h-64 overflow-hidden">
+                <div class="bg-green-400 slide w-full h-full">
+                    <p>slideshow berita 1</p>
+                </div>
+                <div class="bg-green-400 slide w-full h-full">
+                    <p class="font-bold">slideshow berita 2</p>
+                </div>
+                <div class="bg-green-400 slide w-full h-full">
+                    <p>slideshow berita 1</p>
+                </div>
+                <div class="bg-green-400 slide w-full h-full">
+                    <p class="font-bold">slideshow berita 2</p>
+                </div>
             </div>
-
         </div>
 
     </main>
 
+
+    <script src="{!! mix('js/app.js') !!}"></script>
+    <script>
+        (function($) {
+            "use strict";
+            var slideshow = (function() {
+                var counter = 0,
+                    i,
+                    j,
+                    slides = $("#slideshow .slide"),
+                    slidesLen = slides.length - 1;
+                for (i = 0, j = 9999; i < slides.length; i += 1, j -= 1) {
+                    $(slides[i]).css("z-index", j);
+                }
+                return {
+                    startSlideshow: function() {
+                        window.setInterval(function() {
+                            if (counter === 0) {
+                                slides.eq(counter).fadeOut();
+                                counter += 1;
+                            } else if (counter === slidesLen) {
+                                counter = 0;
+                                slides.eq(counter).fadeIn(function() {
+                                    slides.fadeIn();
+                                });
+                            } else {
+                                slides.eq(counter).fadeOut();
+                                counter += 1;
+                            }
+                        }, 4000);
+                    }
+                };
+            }());
+            slideshow.startSlideshow();
+        }(jQuery));
+    </script>
 </body>
 
 </html>

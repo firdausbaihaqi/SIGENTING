@@ -14,6 +14,7 @@
 
 @import "tailwindcss/utilities";
 
+
 * {
     font-family: Nunito;
 }
@@ -72,7 +73,7 @@
     @apply border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg outline-none;
 }
 
-.input-search:focus{
+.input-search:focus {
     @apply border-blue-500;
 }
 
@@ -80,7 +81,7 @@
     @apply text-gray-600 text-sm;
 }
 
-.form-group{
+.form-group {
     @apply mb-2 block;
 }
 
@@ -88,7 +89,7 @@
     @apply py-2 px-4 w-full rounded-xl border border-gray-500;
 }
 
-.input-text:focus{
+.input-text:focus {
     outline: none;
 }
 
@@ -102,7 +103,7 @@
     background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
 }
 
-.modal-header{
+.modal-header {
     @apply flex justify-between bg-gray-700 items-center;
 }
 
@@ -110,4 +111,12 @@
     background-color: #fefefe;
     margin: 10% auto; /* 15% from the top and centered */
     width: 60%; /* Could be more or less, depending on screen size */
-  }
+}
+
+#slideshow {
+    @apply;
+
+    .slide {
+        @apply;
+    }
+}
