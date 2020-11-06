@@ -39,14 +39,14 @@
 
 // Halaman List dan Input data Ibu dan Bayi
 .table {
-    @apply text-left w-full bg-white shadow-md rounded my-6 border-collapse;
+    @apply text-left w-full bg-white shadow-md rounded-3xl overflow-hidden mt-4;
 
     .table-header {
-        @apply border-2 border-gray-500 py-4 px-6 font-bold uppercase text-sm;
+        @apply pb-4 pt-6 px-6 font-bold uppercase text-sm border border-gray-600;
     }
 
     .table-data {
-        @apply py-4 px-6 border-b border-gray-300;
+        @apply py-4 px-6 ;
     }
 
     .td-button {
@@ -62,49 +62,78 @@
 }
 
 .title {
-    @apply text-center text-4xl py-4;
+    @apply text-center text-4xl py-4 font-semibold ;
 }
 
 .button {
     @apply h-10 px-5 text-center rounded-lg;
 }
 
+.button-cancel{
+    @apply h-10 px-5 text-center rounded-lg text-red-400 border-2 border-red-400 duration-200 outline-none;
+}
+
+.button-cancel:hover{
+    @apply text-white bg-red-500;
+}
+
+.button-submit{
+    @apply h-10 px-5 text-center rounded-lg text-blue-100 bg-blue-500 duration-200  duration-200 outline-none;
+}
+
+.button-submit:hover{
+    @apply bg-blue-700;
+}
+
 .input-search {
-    @apply border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg outline-none;
+    @apply border-2 border-gray-300 bg-white h-12 px-5 pr-16 rounded-lg outline-none w-1/4 duration-300;
+}
+
+.button-search{
+    @apply px-5 h-12 text-center rounded-lg text-blue-100 bg-blue-500 duration-200;
 }
 
 .input-search:focus {
-    @apply border-blue-500;
+    @apply border-blue-500 ;
+
 }
 
 .label {
-    @apply text-gray-600 text-sm;
+    @apply text-gray-700 text-base pl-1 font-medium;
 }
 
-.form-group {
-    @apply mb-2 block;
+.form-groups {
+    @apply mb-3 block;
 }
 
 .input-text {
-    @apply py-2 px-4 w-full rounded-xl border border-gray-500;
+    @apply py-2 px-4 w-full outline-none rounded-lg 
+    border border-gray-500 duration-300;
 }
 
 .input-text:focus {
-    outline: none;
+    @apply border-blue-500;
 }
 
 // .modal{
 //     @apply bg-white px-4 py-6 rounded-lg w-1/3 z-10;
 // }
 
+.show{
+    @apply block opacity-100;
+}
+
 .modal-parent {
-    @apply fixed z-10 left-0 top-0 w-full h-full overflow-hidden bg-black hidden;
-    transition: all 500ms ease-in-out;
+    @apply fixed left-0 top-0 w-full h-full 
+    overflow-hidden bg-black hidden outline-none
+    transition-all duration-200 ease-in-out;
+    z-index: 1050;
     background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
 }
 
 .modal-header {
-    @apply flex justify-between bg-gray-700 items-center;
+    @apply flex justify-between bg-gray-700
+     items-center;
 }
 
 .modal-container {
