@@ -21,6 +21,13 @@ class RedirectIfAuthenticated
         if (Auth::guard($guard)->check()) {
             return redirect(RouteServiceProvider::HOME);
         }
+        // if (auth()->guard('bidan')->check()) {
+        //     redirect()->route('authBidan');
+        // } else if (auth()->guard('ibu')->check()) {
+        //     redirect()->route('authIbu');
+        // } else {
+        //     redirect()->route('login');
+        // }
 
         return $next($request);
     }
