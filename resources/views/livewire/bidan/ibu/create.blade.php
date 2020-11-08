@@ -30,7 +30,7 @@
             </div>
             <div class="modal-footer mt-2">
                 <button type="button" class="button-cancel close-btn" data-dismiss="modal">Batal</button>
-                <button type="button" wire:click.prevent="store()" class="button-submit hover:bg-blue-700 close-modal">Tambahkan</button>
+                <button type="button" wire:click.prevent="store()" class="button-submit close-modal">Tambahkan</button>
             </div>
         </div>
     </div>

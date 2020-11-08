@@ -20,12 +20,13 @@
             {{ session('message') }}
         </div>
         @endif
+        <div class="mobile-blocker md:hidden">Hanya boleh dibuka lewat pc atau layar tablet :(</div>
             <table class="table">
                 <thead class="bg-gray-700 text-white">
                     <tr>
                         <th class="table-header w-1/12 rounded-tl-3xl">No.</th>
                         <th class="table-header w-1/4">Nama Ibu</th>
-                        <!-- tambah table list nama bayi -->
+                        <!-- sek kurang table list nama bayi -->
                         <th class="table-header">Alamat</th>
                         <th class="table-header w-1/6">HP</th>
                         <th class="table-header w-2/12 rounded-tr-3xl">Action</th>
