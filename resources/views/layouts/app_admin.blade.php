@@ -13,11 +13,12 @@
     </style>
     <script src="{{ asset('js/bootstrap/app.js') }}" defer></script>
     <link href="{{ asset('css/bootstrap/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
     @yield('style')
 </head>
 
-<body>
+<body class="bg-gray-100">
     <nav>
         <a href="">Home</a>
         <a href="">Data Postingan</a>

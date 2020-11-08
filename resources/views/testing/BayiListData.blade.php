@@ -41,7 +41,8 @@
         </div>
 
         <!-- iki tabel -->
-        <div class="w-full px-4">
+
+        <div class="sm:w-32 md:w-full px-4">
             <table class="table">
                 <thead class="bg-gray-700 text-white">
                     <tr>
@@ -50,7 +51,7 @@
                         <th class="table-header ">nama ibu</th>
                         <th class="table-header">jenis kelamin</th>
                         <th class="table-header">tgl lahir</th>
-                        <th class="table-header w-1/5">action</th>
+                        <th class="table-header lg:w-1/5">action</th>
                     </tr>
                 </thead>
                 <tbody>
