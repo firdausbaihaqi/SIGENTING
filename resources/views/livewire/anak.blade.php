@@ -18,9 +18,9 @@
 <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="container">
-            <div class="card">
-                <div class="card-header">
-                    <h2>Data</h2>
+            <div>
+                <div class="title text-gray-700 mb-8">
+                    <h2>Data Anak</h2>
                 </div>
                 <div class="card-body">
                     @if (session()->has('$message'))

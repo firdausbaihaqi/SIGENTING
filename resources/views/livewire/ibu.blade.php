@@ -6,18 +6,20 @@
     <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
     <script src="{{ asset('js/bootstrap/app.js') }}" defer></script>
     <link href="{{ asset('css/bootstrap/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
     @livewireStyles
 </head>
 
-<body>
-    <div class="container mt-5">
+<body class="bg-gray-100">
+    <div class="container my-5">
         <div class="row justify-content-center">
             <div class="container">
-                <div class="card">
-                    <div class="card-header">
-                        <h2>Data</h2>
+                <div>
+                    <div class="title text-gray-700 mb-8">
+                        <h2>Data Ibu</h2>
                     </div>
-                    <div class="card-body">
+                    <div>
                         @if (session()->has('$message'))
                         <div class="alert alert-success">
                             {{ session('$message') }}

@@ -22,19 +22,17 @@
 
         <h1 class="m-8 text-2xl">Data Ibu</h1>
         <div class="flex">
-            <div class="pt-2 relative text-gray-600">
-                <input class="input-search text-sm focus:outline-none" type="search" name="search" placeholder="Pencarian">
+            <div class="pt-2 block text-gray-600">
+                <input wire:model="search" class="input-search text-sm focus:outline-none duration-300" type="search" name="search" placeholder="Pencarian">
                 <!-- svg search -->
-                <button type="submit" class="absolute right-0 top-0 mt-5 mr-4">
+                <button type="submit" class="absolute mt-3 -ml-8">
                     <svg class="text-gray-600 h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 56.966 56.966" style="enable-background:new 0 0 56.966 56.966;" xml:space="preserve" width="512px" height="512px">
                         <path d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z" />
                     </svg>
                 </button>
                 <!-- svg search -->
-            </div>
-            <div class="pt-2">
-                <button id="modalBtn" class="button mx-3 text-blue-100 bg-blue-500 hover:bg-blue-700 duration-200">
-                    Tambah Data
+                <button id="modalBtn" class="button-search ml-1 focus:outline-none hover:bg-blue-700 duration-200" wire:click.prevent="resetInput()" data-toggle="modal" data-target="#exampleModal">
+                    Tambah Data Ibu
                 </button>
             </div>
 
@@ -110,26 +108,26 @@
                 <div class="modal-body p-4 center">
                     <form action="" class="w-2/3 mt-4">
                         <div class="form-group">
-                            <label for="nama" class="label pl-1">Nama</label>
-                            <input type="text" class="input-text focus:border-blue-500" name="nama">
+                            <label for="nama" class="label   ">Nama</label>
+                            <input type="text" class="input-text  " name="nama">
                         </div>
                         <div class="flex">
                             <div class="form-group mr-2">
-                                <label for="alamat" class="label pl-1">Alamat</label>
-                                <input type="text" class="input-text focus:border-blue-500" name="alamat">
+                                <label for="alamat" class="label   ">Alamat</label>
+                                <input type="text" class="input-text  " name="alamat">
                             </div>
                             <div class="form-group ml-2">
-                                <label for="telepon" class="label pl-1">Telepon</label>
-                                <input type="text" class="input-text focus:border-blue-500" name="telepon">
+                                <label for="telepon" class="label   ">Telepon</label>
+                                <input type="text" class="input-text  " name="telepon">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="email" class="label pl-1">Email</label>
-                            <input type="email" class="input-text focus:border-blue-500" name="email" required>
+                            <label for="email" class="label   ">Email</label>
+                            <input type="email" class="input-text  " name="email" required>
                         </div>
                         <div class="form-group">
-                            <label for="riwayatPenyakit" class="label pl-1">Riwayat Penyakit</label>
-                            <input type="text" class="input-text focus:border-blue-500" name="riwayatPenyakit">
+                            <label for="riwayatPenyakit" class="label   ">Riwayat Penyakit</label>
+                            <input type="text" class="input-text  " name="riwayatPenyakit">
                         </div>
                         <button type="submit" class="mt-3 button text-blue-100 bg-blue-500 hover:bg-blue-700 duration-200 float-right">Tambahkan</button>
                     </form>
@@ -149,7 +147,7 @@
         const modalClose = document.getElementById('modalClose');
 
 
-        // modal.style.display = "block";
+        modal.style.display = "block";
 
         modalBtn.onclick = function() {
             modal.style.display = "block";
