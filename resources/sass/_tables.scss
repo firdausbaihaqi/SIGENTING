@@ -1,0 +1,15 @@
+.table {
+    @apply text-left w-full bg-white shadow-md rounded-3xl overflow-hidden mt-4;
+
+    .table-header {
+        @apply pb-4 pt-6 px-6 font-bold uppercase text-sm border border-gray-600;
+    }
+
+    .table-data {
+        @apply py-4 px-6 ;
+    }
+
+    .td-button {
+        @apply font-bold py-2 px-4 rounded text-xs duration-200;
+    }
+}

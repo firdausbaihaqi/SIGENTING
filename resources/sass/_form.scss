@@ -1,0 +1,22 @@
+.label {
+    @apply text-gray-700 text-base pl-1 font-medium;
+}
+
+.form-groups {
+    @apply mb-4 block;
+}
+
+.input-text {
+    @apply py-2 px-4 w-full outline-none rounded-lg border border-gray-500 duration-300;
+    &:focus {
+        @apply border-blue-500;
+    }
+}
+
+.input-search {
+    @apply border-2 border-gray-300 bg-white h-12 px-5 pr-16 rounded-lg outline-none w-1/4 duration-300;
+
+    &:focus{
+        @apply border-blue-500;
+    }
+}
