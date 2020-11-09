@@ -1,0 +1,36 @@
+.navigation-bar{
+    @apply  h-16 w-full flex bg-gray-700 items-center justify-between sticky top-0;
+}
+
+.navigation-logo{
+    @apply pl-16 text-gray-100;
+}
+
+.navigation-links{
+    @apply  pr-16 text-gray-300 h-full flex items-center;
+}
+
+.navigation-link{
+    @apply px-2 duration-300 h-full flex items-center;
+    &:hover{
+        @apply no-underline text-gray-100 bg-gray-600;
+    }
+}
+
+.dropdown{
+    @apply flex items-center px-2 duration-300 h-full;
+
+    &:hover .dropdown-content{
+        @apply flex;
+    }
+}
+
+.dropdown-content{
+    @apply -ml-8 mt-32 pt-6 pb-3 absolute w-40 bg-gray-700 flex-col items-center hidden duration-300;
+}
+
+.dropdown-trigger{
+  &:hover{
+      @apply text-white;
+  }
+}

@@ -24,6 +24,8 @@
 // Modal
 @import "modal";
 
+// navbar
+@import "navbar";
 
 
 * {
@@ -31,7 +33,7 @@
 }
 
 .mobile-blocker{
-    @apply fixed top-0 left-0 w-screen h-screen z-50 bg-gray-700 text-white text-2xl grid place-items-center;
+    @apply fixed top-0 left-0 w-screen h-screen z-50 bg-gray-700 px-10 text-white text-2xl grid place-items-center;
 }
 
 // halaman admin panel
