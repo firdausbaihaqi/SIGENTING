@@ -51,6 +51,8 @@ Route::group(['prefix' => 'posts'], function () {
 });
 
 Route::get('/status-kesehatan-anak', 'StatusKesehatanAnakController@index')->name('ska.index');
+
+
 Route::post('/images', 'PostController@uploadImage')->name('post.image');
 
 Route::group(['prefix' => 'filemanager'], function () {
