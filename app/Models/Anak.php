@@ -16,4 +16,9 @@ class Anak extends Model
     {
         return $this->belongsTo('App\Models\Ibu', 'id_ibu');
     }
+
+    public function status_kesehatan_anak()
+    {
+        return $this->hasOne('App\Models\StatusKesehatanAnak');
+    }
 }

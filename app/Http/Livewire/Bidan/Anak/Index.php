@@ -91,4 +91,9 @@ class Index extends Component
             session()->flash('message', 'Users Deleted Successfully.');
         }
     }
+    public function cancel()
+    {
+        $this->updateMode = false;
+        $this->resetInput();
+    }
 }

@@ -45,6 +45,7 @@
                         <label class="label" for="exampleFormControlInput2">Tanggal Lahir</label>
                         <input type="date" class="input-text focus:border-blue-500" id="exampleFormControlInput3" wire:model="tgl_lahir">
                         @error('tgl_lahir') <span class="text-danger error">{{ $message }}</span>@enderror
+                        <br>
                     </div>
                 </form>
             </div>
