@@ -1,0 +1,16 @@
+.modal-parent {
+    @apply fixed left-0 top-0 w-full h-full overflow-hidden bg-black hidden outline-none transition-all duration-200 ease-in-out;
+    z-index: 1050;
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+.modal-header {
+    @apply flex justify-between bg-gray-700
+     items-center;
+}
+
+.modal-container {
+    background-color: #fefefe;
+    margin: 10% auto; /* 15% from the top and centered */
+    width: 60%; /* Could be more or less, depending on screen size */
+}

@@ -1,0 +1,23 @@
+.button {
+    @apply h-10 px-5 text-center rounded-lg;
+}
+
+.button-cancel{
+    @apply h-10 px-5 text-center rounded-lg text-red-400 border-2 border-red-400 duration-200 outline-none;
+    &:hover{
+         @apply text-white bg-red-500;
+    }
+}
+
+.button-submit{
+    @apply h-10 px-5 text-center rounded-lg text-blue-100 bg-blue-500 duration-200  duration-200 outline-none;
+    &:hover{
+        @apply bg-blue-700;
+    }
+}
+.button-search{
+    @apply px-5 h-12 text-center rounded-lg text-blue-100 bg-blue-500 duration-200;
+    &:focus {
+        @apply border-blue-500 ;
+    }
+}
