@@ -21,6 +21,7 @@
     <section class="mt-12">
 
         <h1 class=" text-4xl text-left">Artikel seputar gizi</h1>
+        <p>tips-tips dan informasi seputar gizi balita </p>
         <div class="mobile-blocker md:hidden">Hanya boleh dibuka lewat pc atau layar tablet :(</div>
 
         <div class="headline-container">
@@ -93,56 +94,57 @@
             <!-- svg search -->
 
         </div>
+        <div class="w-3/4 grid">
+            <a href="#" class="posts-card-link">
+                <div class="posts-card-container">
 
-        <a href="#" class="posts-card-link">
-            <div class="posts-card-container">
-
-                <div class="posts-card-img" style="background: url(https://images.pexels.com/photos/57690/pexels-photo-57690.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+                    <div class="posts-card-img" style="background: url(https://images.pexels.com/photos/57690/pexels-photo-57690.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
                 background-size: cover;">
-                    <div class="overlay-gray"></div>
+                        <div class="overlay-gray"></div>
+                    </div>
+
+                    <div class="posts-card-info">
+                        <div class="ml-4 mt-2 text-xl lg:text-3xl text-black">
+                            <p>Judul Artikel</p>
+                        </div>
+                        <div class="h-24 ml-4 text-sm lg:text-base text-gray-700 overflow-hidden mr-12">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga debitis velit nobis culpa molestiae, iusto sint quod eos eum ullam a iure nihil maxime deserunt laboriosam eveniet impedit est veniam! Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                            </p>
+                        </div>
+                        <div class="mt-6 ml-4 text-gray-700 text-base lg:text-lg">
+                            <p>Tanggal</p>
+                        </div>
+
+                    </div>
+
                 </div>
+            </a>
 
-                <div class="posts-card-info">
-                    <div class="ml-4 mt-2 text-xl lg:text-3xl text-black">
-                        <p>Judul Artikel</p>
-                    </div>
-                    <div class="h-24 ml-4 text-sm lg:text-base text-gray-700 overflow-hidden mr-12">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga debitis velit nobis culpa molestiae, iusto sint quod eos eum ullam a iure nihil maxime deserunt laboriosam eveniet impedit est veniam! Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                        </p>
-                    </div>
-                    <div class="mt-6 ml-4 text-gray-700 text-base lg:text-lg">
-                        <p>Tanggal</p>
-                    </div>
+            <a href="#" class="posts-card-link">
+                <div class="posts-card-container">
 
-                </div>
-
-            </div>
-        </a>
-
-        <a href="#" class="posts-card-link">
-            <div class="posts-card-container">
-
-                <div class="posts-card-img" style="background: url(https://images.pexels.com/photos/57690/pexels-photo-57690.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+                    <div class="posts-card-img" style="background: url(https://images.pexels.com/photos/57690/pexels-photo-57690.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
                 background-size: cover;">
-                    <div class="overlay-gray"></div>
+                        <div class="overlay-gray"></div>
+                    </div>
+
+                    <div class="posts-card-info">
+                        <div class="ml-4 mt-2 text-xl lg:text-3xl text-black">
+                            <p>Judul Artikel</p>
+                        </div>
+                        <div class="h-24 ml-4 text-sm lg:text-base text-gray-700 overflow-hidden mr-12">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga debitis velit nobis culpa molestiae, iusto sint quod eos eum ullam a iure nihil maxime deserunt laboriosam eveniet impedit est veniam! Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                            </p>
+                        </div>
+                        <div class="mt-6 ml-4 text-gray-700 text-base lg:text-lg">
+                            <p>Tanggal</p>
+                        </div>
+
+                    </div>
+
                 </div>
-
-                <div class="posts-card-info">
-                    <div class="ml-4 mt-2 text-xl lg:text-3xl text-black">
-                        <p>Judul Artikel</p>
-                    </div>
-                    <div class="h-24 ml-4 text-sm lg:text-base text-gray-700 overflow-hidden mr-12">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga debitis velit nobis culpa molestiae, iusto sint quod eos eum ullam a iure nihil maxime deserunt laboriosam eveniet impedit est veniam! Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                        </p>
-                    </div>
-                    <div class="mt-6 ml-4 text-gray-700 text-base lg:text-lg">
-                        <p>Tanggal</p>
-                    </div>
-
-                </div>
-
-            </div>
-        </a>
+            </a>
+        </div>
 
 
     </section>

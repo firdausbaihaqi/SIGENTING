@@ -9,6 +9,6 @@ class testingController extends Controller
     public function index()
     {
         // folder.namaFile
-        return view("testing.beritaList");
+        return view("testing.beritaDetail");
     }
 }

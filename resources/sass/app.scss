@@ -90,14 +90,15 @@
     @apply mb-8 ml-8 absolute;
 }
 
+
 // card
 .posts-card-link {
-    @apply mt-8 grid grid-cols-4;
+    @apply mt-8;
     min-width: 800px;
 }
 
 .posts-card-container {
-    @apply bg-white col-span-3 h-56 grid grid-flow-col grid-cols-5 gap-2 rounded-md shadow-md overflow-hidden transform duration-300;
+    @apply bg-white h-56 grid grid-flow-col grid-cols-5 gap-2 rounded-md shadow-md overflow-hidden transform duration-300;
     &:hover {
         @apply scale-105 shadow-lg;
     }
