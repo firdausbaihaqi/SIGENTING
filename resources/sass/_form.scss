@@ -20,3 +20,11 @@
         @apply border-blue-500;
     }
 }
+
+.input-search-lg {
+    @apply border-2 border-gray-300 bg-white h-12 px-5 pr-16 rounded-lg outline-none w-1/2 duration-300;
+
+    &:focus{
+        @apply border-blue-500;
+    }
+}

@@ -8,7 +8,6 @@
 // Fonts
 @import url("https://fonts.googleapis.com/css?family=Nunito");
 
-
 // Variables
 @import "variables";
 
@@ -27,12 +26,11 @@
 // navbar
 @import "navbar";
 
-
 * {
     font-family: Nunito;
 }
 
-.mobile-blocker{
+.mobile-blocker {
     @apply fixed top-0 left-0 w-screen h-screen z-50 bg-gray-700 px-10 text-white text-2xl grid place-items-center;
 }
 
@@ -54,7 +52,6 @@
     }
 }
 
-
 // Global
 .center {
     display: grid;
@@ -62,7 +59,54 @@
 }
 
 .title {
-    @apply text-center text-4xl py-4 font-semibold ;
+    @apply text-center text-4xl py-4 font-semibold;
 }
 
+.overlay-gray {
+    @apply bg-gray-600 h-full w-full overflow-hidden opacity-50;
+}
 
+// halaman post
+.headline-container {
+    @apply mt-12 grid grid-cols-7 gap-1 h-auto w-full border border-gray-100;
+}
+
+.posts-container {
+    @apply flex items-end overflow-hidden;
+}
+
+.posts-bg {
+    @apply h-full w-full overflow-hidden duration-500 transform;
+    &:hover {
+        @apply scale-110;
+    }
+}
+
+.posts-info {
+    @apply mb-12 ml-12 absolute;
+}
+
+.posts-info-secondary {
+    @apply mb-8 ml-8 absolute;
+}
+
+// card
+.posts-card-link {
+    @apply mt-8 grid grid-cols-4;
+    min-width: 800px;
+}
+
+.posts-card-container {
+    @apply bg-white col-span-3 h-56 grid grid-flow-col grid-cols-5 gap-2 rounded-md shadow-md overflow-hidden transform duration-300;
+    &:hover {
+        @apply scale-105 shadow-lg;
+    }
+}
+
+.posts-card-img {
+    @apply col-span-2;
+}
+
+.posts-card-info {
+    @apply h-full w-full col-span-3 flex flex-col;
+}
