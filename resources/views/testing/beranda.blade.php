@@ -22,7 +22,7 @@
         <div class="nav-logo pl-16"> Sigenting</div>
         <div class="nav-menu pr-16">
             <div class="nav-link">
-                <a href="#" class="button ml-2 py-2 border border-green-500 text-green-700 hover:bg-green-500 hover:text-white duration-200">Masuk</a>
+                <a href="{{route('login')}}" class="button ml-2 py-2 border border-green-500 text-green-700 hover:bg-green-500 hover:text-white duration-200">Masuk</a>
             </div>
         </div>
     </nav>
@@ -35,8 +35,8 @@
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam nisi veritatis quidem corporis a ex natus blanditiis numquam facilis. Quo iure harum molestias eum, similique qui fuga soluta necessitatibus itaque? Lorem ipsum dolor sit amet consectetur adipisicing elit.
             </p>
             <div class="pt-12">
-                <a href="#" class="button py-3 bg-green-500 text-white hover:bg-green-700 duration-200">Baca Artikel</a>
-                <a href="#" class="button ml-2 py-3 border border-green-500 text-green-700 hover:bg-green-500 hover:text-white duration-200">Masuk</a>
+                <a href="{{route('berita.list')}}" class="button py-3 bg-green-500 text-white hover:bg-green-700 duration-200">Baca Artikel</a>
+                <a href="{{route('login')}}" class="button ml-2 py-3 border border-green-500 text-green-700 hover:bg-green-500 hover:text-white duration-200">Masuk</a>
             </div>
         </div>
         <div class="w-2/5">

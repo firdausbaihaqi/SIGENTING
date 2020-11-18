@@ -58,3 +58,9 @@ Route::post('/images', 'PostController@uploadImage')->name('post.image');
 Route::group(['prefix' => 'filemanager'], function () {
     \UniSharp\LaravelFilemanager\Lfm::routes();
 });
+
+
+// list testing
+Route::get('/beritaList', function(){
+    return view('testing.beritaList');
+})->name('berita.list');
