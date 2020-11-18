@@ -78,7 +78,8 @@
             e.preventDefault();
             @this.set('id_ibu', -1);
             $('.js-example-basic-single').select2({
-                placeholder: 'Select an option'
+                placeholder: 'Select an option',
+
             });
         });
 

@@ -38,7 +38,12 @@
                     <p>{{$message}}</p>
                 </span>
                 @enderror
-                <input type="submit" value="Masuk" class="btn-login text-white mt-12">
+                @if (session('error'))
+                <span class="text-red-700 text-sm mt-2">
+                    {{ session('error') }}
+                </span>
+                @endif
+                <input type="submit" value="Masuk" class="btn-login text-white mt-6">
             </form>
             <p class="mt-6 label text-center">belum punya akun? Silahkan hubungi posyandu terdekat</p>
         </div>
