@@ -51,12 +51,19 @@ class LoginController extends Controller
             'username' => 'required',
             'password' => 'required',
         ]);
-        if (auth()->guard('bidan')->attempt(['username' => $req['username'], 'password' => $req['password']])) {
+
+        if (auth()->guard('bidan')->attempt([
+            'username' => $request->input('username'),
+            'password' => $request->input('password')
+        ])) {
             return redirect()->route('authBidan');
-        } else if (auth()->guard('ibu')->attempt(['username' => $req['username'], 'password' => $req['password']])) {
+        } else if (auth()->guard('ibu')->attempt([
+            'username' => $request->input('username'),
+            'password' => $request->input('password')
+        ])) {
             return redirect()->route('authIbu');
         } else {
-            return redirect()->route('login');
+            return redirect()->route('login')->with('error', 'Username atau Password Salah');;
         }
     }
 

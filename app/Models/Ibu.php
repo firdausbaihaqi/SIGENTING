@@ -9,7 +9,6 @@ class Ibu extends Authenticatable
 {
     protected $table = 'ibu';
     protected $guarded = [];
-    // protected $fillable = ['nama', 'alamat', 'no_hp'];
 
     public function anak()
     {

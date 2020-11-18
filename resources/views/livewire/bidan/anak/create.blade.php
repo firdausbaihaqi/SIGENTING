@@ -15,7 +15,7 @@
                 <form>
                     <div wire:ignore class="form-group">
                         <label for="nama_ibu">Nama Ibu</label><br>
-                        <select name="" class="js-example-basic-single js-states form-control" wire:model="id_ibu">
+                        <select style="width: 100%;" name="" class="js-example-basic-single js-states form-control" wire:model="id_ibu">
                             <option></option>
                             @foreach($ibu as $item)
                             <option value="{{ $item->id }}">{{ $item->nama }}</option>
