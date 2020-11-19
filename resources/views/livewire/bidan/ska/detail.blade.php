@@ -1,4 +1,5 @@
 @extends('layouts.app_admin');
+@section('title', 'Sigenting | Data Status Kesehatan Anak')
 @section('content')
 <div class="container mt-5">
     <div class="row justify-content-center">
@@ -6,8 +7,15 @@
             <div class="card">
                 <div class="card-header">
                     <h2>Data Status Kesehatan Anak</h2>
+                    @foreach ($ska as $item)
+                    @if ($item->anak->nama)
+                    <h2>Nama Anak : {{ $item->anak->nama }} </h2>
+                    @break
+                    @endif
+                    @endforeach
                 </div>
                 <div class="card-body">
+                    <a href="{{ route('ska.create', $id) }}" class="btn btn-primary">Tambah Data</a>
                     @if (session()->has('$message'))
                     <div class="alert alert-success">
                         {{ session('$message') }}
@@ -36,7 +44,7 @@
                                     <td>{{ $item->tinggi_badan }}</td>
                                     <td>{{ $item->lingkar_kepala }}</td>
                                     <td>
-                                        <a href="{{route('ska.detail' , $item->id)}}"
+                                        <a href="{{route('ska.edit', [$id , $item->id])}}"
                                             class="btn btn-warning btn-sm">Edit</a>
                                     </td>
                                 </tr>

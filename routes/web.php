@@ -11,8 +11,6 @@ Route::get('/', 'BerandaController@index');
 Route::get('/about', 'BerandaController@about');
 Route::get('/kontak', 'BerandaController@kontak');
 
-Route::view('/anak', 'livewire.anak');
-
 Route::get('testauthibu', function () {
     return "Welkam " . auth()->guard()->user()->nama . "di Halaman ibu";
 })->middleware('auth:ibu')->name('authIbu');
@@ -29,10 +27,14 @@ Route::group(['prefix' => 'bidan', 'middleware' => 'auth:bidan'], function () {
     Route::get('/', function () {
         return 'ini root bidan';
     });
+    Route::view('/anak', 'livewire.anak');
     Route::view('/data-ibu', 'livewire.ibu')->name('data.ibu');
     Route::view('/status-kesehatan-anak', 'livewire.ska')->name('ska.index');
-    // Route::view('/status-kesehatan-anak/detail/{anak:id}', 'livewire.ska_detail')->name('ska.detail');
-    Route::get('/status-kesehatan-anak/detail/{id}', 'StatusKesehatanAnakController@show')->name('ska.detail');
+    Route::get('/status-kesehatan-anak/anak/{id}', 'StatusKesehatanAnakController@show')->name('ska.detail');
+    Route::get('/status-kesehatan-anak/anak/{id}/create', 'StatusKesehatanAnakController@create')->name('ska.create');
+    Route::post('/status-kesehatan-anak/anak/{id}/create', 'StatusKesehatanAnakController@store')->name('ska.store');
+    Route::get('/status-kesehatan-anak/anak/{id}/edit/{status_kesehatan_anak:id}', 'StatusKesehatanAnakController@edit')->name('ska.edit');
+    Route::patch('/status-kesehatan-anak/anak/{id}/update/{status_kesehatan_anak:id}', 'StatusKesehatanAnakController@update')->name('ska.update');
 });
 //post
 Route::group(['prefix' => 'bidan/posts', 'middleware' => 'auth:bidan'], function () {
@@ -55,6 +57,6 @@ Route::group(['prefix' => 'filemanager'], function () {
 
 
 // list testing
-Route::get('/beritaList', function(){
+Route::get('/beritaList', function () {
     return view('testing.beritaList');
 })->name('berita.list');
