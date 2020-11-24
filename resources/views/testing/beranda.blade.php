@@ -17,8 +17,8 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 
-<body class="bg-white">
-    <nav class="w-full h-16 bg-white flex items-center justify-between shadow-sm">
+<body class="bg-green-500 md:bg-white h-screen duration-300">
+    <nav class="hidden md:flex w-full h-16 bg-gray-100 items-center justify-between shadow-sm">
         <div class="nav-logo pl-16"> Sigenting</div>
         <div class="nav-menu pr-16">
             <div class="nav-link">
@@ -26,20 +26,20 @@
             </div>
         </div>
     </nav>
-    <main class="flex justify-between items-center w-full pt-32 px-16 border border-gray-700 flex-wrap">
-        <div class="w-2/6">
-            <h1 class="text-4xl font-bold pb-4">
+    <main class="flex justify-between items-center w-full pt-12 md:pt-32 px-5 md:px-16 flex-wrap">
+        <div class="w-3/4 md:w-2/6">
+            <h1 class="text-2xl text-white md:text-black md:text-4xl font-bold pb-4">
                 Sistem Informasi Pencegahan Stunting
             </h1>
-            <p class="text-gray-700">
+            <p class="hidden md:inline text-gray-700">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam nisi veritatis quidem corporis a ex natus blanditiis numquam facilis. Quo iure harum molestias eum, similique qui fuga soluta necessitatibus itaque? Lorem ipsum dolor sit amet consectetur adipisicing elit.
             </p>
             <div class="pt-12">
-                <a href="{{route('berita.list')}}" class="button py-3 bg-green-500 text-white hover:bg-green-700 duration-200">Baca Artikel</a>
-                <a href="{{route('login')}}" class="button ml-2 py-3 border border-green-500 text-green-700 hover:bg-green-500 hover:text-white duration-200">Masuk</a>
+                <a href="{{route('berita.list')}}" class="hidden md:inline button py-3 bg-green-500 text-white hover:bg-green-700 duration-200">Baca Artikel</a>
+                <a href="{{route('login')}}" class="px-10 button ml-2 py-3 border bg-white border-green-500 text-green-700 hover:bg-green-500 hover:text-white duration-200">Masuk</a>
             </div>
         </div>
-        <div class="w-2/5">
+        <div class="hidden md:inline w-2/5">
             <div id="slideshow" class="border border-gray-700 h-64 overflow-hidden">
                 <div class="bg-green-400 slide w-full h-full">
                     <p>slideshow berita 1</p>
@@ -57,7 +57,9 @@
         </div>
 
     </main>
-
+    <section class="bottom-0 mt-20 md:hidden w-screen h-full bg-white rounded-tr-3xl rounded-tl-3xl">
+        
+    </section>
 
     <script src="{!! mix('js/app.js') !!}"></script>
     <script>
