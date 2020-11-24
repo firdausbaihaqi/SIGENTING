@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Anak;
 use App\Models\StatusKesehatanAnak;
+use App\Models\Tracking;
 use Carbon\Carbon;
 
 class StatusKesehatanAnakController extends Controller
@@ -32,6 +33,11 @@ class StatusKesehatanAnakController extends Controller
 
     public function store(Request $request)
     {
+        $berat = $request->berat_badan;
+        $tinggi = $request->tinggi_badan;
+        $lingkar_kepala = $request->lingkar_kepala;
+        $status_stunting = $this->isStunting($berat, $tinggi, $lingkar_kepala);
+
         $this->validate($request, [
             'berat_badan' => 'required|numeric',
             'tinggi_badan' => 'required|numeric',
@@ -44,6 +50,7 @@ class StatusKesehatanAnakController extends Controller
             'tinggi_badan' => $request->tinggi_badan,
             'lingkar_kepala' => $request->lingkar_kepala,
         ]);
+        $this->createOrUpdateTracking($request->id_anak, $status_stunting);
         return redirect()->route('ska.detail', $request->id_anak)->with(['success' => 'Data Status Kesehatan Anak Berhasil Disimpan']);
     }
 
@@ -62,5 +69,29 @@ class StatusKesehatanAnakController extends Controller
         ]);
         StatusKesehatanAnak::where('id_anak', $request->id_anak)->limit(1)->update($data);
         return redirect()->route('ska.detail', $request->id_anak)->with(['success' => 'Data Status Kesehatan Anak Berhasil Diubah']);
+    }
+
+    public function isStunting($berat, $tinggi, $lingkar_kepala)
+    {
+        $status_stunting = '';
+        if ($berat < 10 || $tinggi < 25 || $lingkar_kepala < 6) {
+            return $status_stunting = 'YA';
+        } else {
+            return $status_stunting = 'TIDAK';
+        }
+    }
+
+    public function createOrUpdateTracking($id, $status_stunting)
+    {
+        $id_anak = Tracking::where('id_anak', $id)->exists();
+        if ($id_anak) {
+            Tracking::where('id_anak', $id)
+                ->limit(1)->update(['status_stunting' => $status_stunting]);
+        } else {
+            Tracking::create([
+                'id_anak' => $id,
+                'status_stunting' => $status_stunting
+            ]);
+        }
     }
 }

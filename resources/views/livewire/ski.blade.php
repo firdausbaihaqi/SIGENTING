@@ -1,6 +1,6 @@
 @extends('layouts.app_admin')
 
-@section('title', 'Data Status Kesehatan Anak')
+@section('title', 'Data Status Kesehatan Ibu')
 
 @section('style')
 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
@@ -20,7 +20,7 @@
         <div class="container">
             <div class="card">
                 <div class="card-header">
-                    <h2>Data Kesehatan Anak</h2>
+                    <h2>Data Kesehatan Ibu</h2>
                 </div>
                 <div class="card-body">
                     @if (session()->has('$message'))
@@ -28,7 +28,7 @@
                         {{ session('$message') }}
                     </div>
                     @endif
-                    @livewire('bidan.ska.detail')
+                    @livewire('bidan.ski.index')
                 </div>
             </div>
         </div>
