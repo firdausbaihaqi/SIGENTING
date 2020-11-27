@@ -14,4 +14,9 @@ class Ibu extends Authenticatable
     {
         return $this->hasMany('App\Models\Anak');
     }
+
+    public function status_kesehatan_ibu()
+    {
+        return $this->hasOne('App\Models\StatusKesehatanIbu');
+    }
 }

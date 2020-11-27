@@ -80,4 +80,10 @@ class PostController extends Controller
             return $response;
         }
     }
+
+    public function listBerita()
+    {
+        $post = Post::latest()->get();
+        return view('berita.index', compact('post'));
+    }
 }
