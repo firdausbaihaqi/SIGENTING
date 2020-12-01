@@ -34,6 +34,58 @@
     @apply absolute top-0 left-0 w-screen h-screen z-50 bg-gray-700 px-10 text-white text-2xl grid place-items-center;
 }
 
+.pc-blocker {
+    @apply absolute top-0 left-0 w-screen h-screen z-50 bg-gray-700 px-10 text-white text-2xl grid place-items-center;
+}
+
+// carousel beranda
+.carousel-open:checked + .carousel-item {
+    position: static;
+    opacity: 100;
+}
+
+.carousel-item {
+    -webkit-transition: opacity 0.6s ease-out;
+    transition: opacity 0.6s ease-out;
+}
+
+#carousel-1:checked ~ .control-1,
+#carousel-2:checked ~ .control-2,
+#carousel-3:checked ~ .control-3 {
+    display: block;
+}
+
+.carousel-indicators {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    bottom: 2%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 10;
+}
+
+#carousel-1:checked
+    ~ .control-1
+    ~ .carousel-indicators
+    li:nth-child(1)
+    .carousel-bullet,
+#carousel-2:checked
+    ~ .control-2
+    ~ .carousel-indicators
+    li:nth-child(2)
+    .carousel-bullet,
+#carousel-3:checked
+    ~ .control-3
+    ~ .carousel-indicators
+    li:nth-child(3)
+    .carousel-bullet {
+    color: #000;
+    /*Set to match the Tailwind colour you want the active one to be */
+}
+
 // halaman admin panel
 .card-adminPanel {
     @apply w-1/2 flex justify-center;
@@ -90,18 +142,14 @@
     @apply mb-8 ml-8 absolute;
 }
 
-
 // card
 .posts-card-link {
     @apply mt-8;
     min-width: 800px;
 
-    @media (max-width : 640px ) {
+    @media (max-width: 640px) {
         min-width: 300px;
     }
-
-
-
 }
 
 .posts-card-container {
@@ -109,44 +157,42 @@
     &:hover {
         @apply scale-105 shadow-lg;
     }
-    @media (max-width : 640px ) {
+    @media (max-width: 640px) {
         @apply h-40;
     }
 }
 
 .posts-card-img {
     @apply col-span-2;
-    @media (max-width : 640px ) {
+    @media (max-width: 640px) {
         @apply col-span-5;
     }
 }
 
 .posts-card-info {
     @apply h-full w-full col-span-3 flex flex-col;
-    @media (max-width : 640px ) {
+    @media (max-width: 640px) {
         @apply col-span-1 absolute;
     }
 
-    .title{
+    .title {
         @apply ml-4 mt-2 text-xl text-black;
-        @media (max-width : 640px ) {
+        @media (max-width: 640px) {
             @apply absolute left-0 bottom-0 ml-4 mb-10 text-lg text-white;
         }
     }
 
-    .tanggal{
+    .tanggal {
         @apply mt-6 ml-4 text-gray-700 text-base;
-        @media (max-width : 640px ) {
+        @media (max-width: 640px) {
             @apply absolute left-0 bottom-0 ml-4 mb-8 text-white;
         }
     }
 
-    .detail{
+    .detail {
         @apply h-24 ml-4 text-sm text-gray-700 overflow-hidden mr-12;
-        @media (max-width : 640px ) {
+        @media (max-width: 640px) {
             @apply hidden;
         }
     }
-
-   
 }

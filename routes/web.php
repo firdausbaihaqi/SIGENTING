@@ -74,3 +74,7 @@ Route::get('/beritaList', function () {
 Route::get('/beritaDetail', function () {
     return view('testing.beritaDetail');
 })->name('berita.Detail');
+
+Route::get('/berandaSetelahLogin', function () {
+    return view('testing.berandaSetelahLogin');
+})->name('berita.berandaSetelahLogin');
