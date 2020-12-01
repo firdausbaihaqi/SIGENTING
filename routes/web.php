@@ -70,3 +70,7 @@ Route::get('list-berita', 'PostController@listBerita')->name('list.berita');
 Route::get('/beritaList', function () {
     return view('testing.beritaList');
 })->name('berita.list');
+
+Route::get('/beritaDetail', function () {
+    return view('testing.beritaDetail');
+})->name('berita.Detail');
