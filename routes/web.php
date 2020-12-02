@@ -15,6 +15,7 @@ Route::get('testauthibu', function () {
     return "Welkam " . auth()->guard()->user()->nama . "di Halaman ibu";
 })->middleware('auth:ibu')->name('authIbu');
 
+// @wisnu arahkan ke halaman adminPanelBlade di testing
 Route::get('testauthbidan', function () {
     return "Welkam " . auth()->guard('bidan')->user()->nama . " di Halaman Bidan";
 })->middleware('auth:bidan')->name('authBidan');
@@ -77,4 +78,8 @@ Route::get('/beritaDetail', function () {
 
 Route::get('/berandaSetelahLogin', function () {
     return view('testing.berandaSetelahLogin');
-})->name('berita.berandaSetelahLogin');
+});
+
+Route::get('/dataBayi', function () {
+    return view('testing.dataBayi');
+});
