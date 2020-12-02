@@ -61,7 +61,7 @@ class LoginController extends Controller
             'username' => $request->input('username'),
             'password' => $request->input('password')
         ])) {
-            return redirect()->route('authIbu');
+            return redirect()->route('ibu.index');
         } else {
             return redirect()->route('login')->with('error', 'Username atau Password Salah');;
         }

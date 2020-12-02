@@ -11,10 +11,6 @@ Route::get('/', 'BerandaController@index');
 Route::get('/about', 'BerandaController@about');
 Route::get('/kontak', 'BerandaController@kontak');
 
-Route::get('testauthibu', function () {
-    return "Welkam " . auth()->guard()->user()->nama . "di Halaman ibu";
-})->middleware('auth:ibu')->name('authIbu');
-
 Route::get('testauthbidan', function () {
     return "Welkam " . auth()->guard('bidan')->user()->nama . " di Halaman Bidan";
 })->middleware('auth:bidan')->name('authBidan');
@@ -54,6 +50,11 @@ Route::group(['prefix' => 'bidan/posts', 'middleware' => 'auth:bidan'], function
     Route::delete('{post:id}/delete', 'PostController@destroy')->name('post.delete');
 });
 
+
+Route::group(['prefix' => 'ibu',  'middleware' => 'auth:ibu'], function () {
+    Route::get('/', 'IbuController@index')->name('ibu.index');
+    Route::get('/data-anak/{id}', 'IbuController@data_anak')->name('ibu.data.anak');
+});
 
 // Route::view('/status-kesehatan-anak/detail/{id}', 'livewire.ska_detail')->name('ska.detail');
 
