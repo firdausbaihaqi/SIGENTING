@@ -53,7 +53,7 @@ Route::group(['prefix' => 'bidan/posts', 'middleware' => 'auth:bidan'], function
 
 Route::group(['prefix' => 'ibu',  'middleware' => 'auth:ibu'], function () {
     Route::get('/', 'IbuController@index')->name('ibu.index');
-    Route::get('/data-anak/{id}', 'IbuController@data_anak')->name('ibu.data.anak');
+    Route::get('/data-anak', 'IbuController@data_anak')->name('ibu.data.anak');
 });
 
 // Route::view('/status-kesehatan-anak/detail/{id}', 'livewire.ska_detail')->name('ska.detail');
