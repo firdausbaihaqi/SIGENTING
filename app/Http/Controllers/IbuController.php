@@ -18,16 +18,18 @@ class IbuController extends Controller
         return view('ibu.index', compact('auth', 'anak'));
     }
 
-    public function data_anak($id)
+    public function data_anak()
     {
         $auth = auth()->guard()->user();
-        $anak = Anak::find($id);
-
-        if ($auth->id == $anak->id_ibu) {            
-            return view('ibu.data_anak', compact('auth','anak'));
-        }else{
-            return abort(404);
-        }
+        $anak = Anak::select('*')
+        ->join('status_kesehatan_anak','anak.id','=','status_kesehatan_anak.id_anak')
+        ->where('anak.id_ibu' , $auth->id)->get();;
+        
+        // if ($auth->id == $anak->id_ibu) {            
+        // }else{
+        //     return abort(404);
+        // }
+        return view('ibu.data_anak', compact('auth','anak'));
     }
 
     

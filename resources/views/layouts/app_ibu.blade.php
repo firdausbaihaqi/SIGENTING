@@ -30,7 +30,7 @@
 
     <nav class="fixed bottom-0 bg-gray-200 w-full h-16 shadow-lg z-40 flex items-center justify-center">
 
-        <a href="#">
+        <a href="{{ route('ibu.index') }}">
             <div class="mx-2 py-2 px-4 duration-200 text-white grid place-items-center">
                 <svg class="w-8 text-blue-500 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -57,7 +57,7 @@
             </div>
         </a>
 
-        <a href="#">
+        <a href="{{ route('ibu.data.anak') }}">
             <div class="mx-2 py-2 px-4 duration-200 text-white grid place-items-center">
                 <svg class="w-8 text-blue-300 hover:text-blue-500 fill-current" viewBox="0 0 20 20"
                     xmlns="http://www.w3.org/2000/svg">
