@@ -18,9 +18,21 @@
 </head>
 
 <body class="bg-gray-400 ">
+    <div class="block sm:hidden md:hidden w-full fixed rounded-bl-3xl rounded-br-3xl overflow-hidden bg-blue-500" style="height: 75vh; background: url({{ asset('img/login.png') }}) rgba(66, 153, 225, 0.9);
+    background-size: cover; background-blend-mode: multiply;">
+        <div class="w-2/3">
+            <h1 class="mx-6 text-white text-3xl font-semibold" style="margin-top: 20%;">
+                Sistem Informasi Pencegahan Stunting
+            </h1>
+        </div>
+
+    </div>
     <div class="center">
-        <div class="card-login mt-32">
-            <h1 class="title">Ini Logo</h1>
+
+        <div class="card-login fixed bottom-0 md:relative mb-8 md:mb-0 mt-12 md:mt-32 mx-6 md:w-1/3 ">
+            <div class="hidden md:block">
+                <h1 class="title">Ini Logo</h1>
+            </div>
             <p class="text-gray-700 mt-6">mohon masuk terlebih dahulu untuk melanjutkan</p>
             <form action="{{ route('login') }}" method="POST" class="mt-4 block">
                 @csrf

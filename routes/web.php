@@ -11,9 +11,10 @@ Route::get('/', 'BerandaController@index');
 Route::get('/about', 'BerandaController@about');
 Route::get('/kontak', 'BerandaController@kontak');
 
-// Route::get('', function () {
-//     return view('testing.AdminPanel');
-// })->middleware('auth:bidan')->name('authBidan');
+ Route::get('', function () {
+     return view('testing.AdminPanel');
+ })->middleware('auth:bidan')->name('authBidan');
+
 
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
@@ -76,3 +77,15 @@ Route::get('list-berita', 'PostController@listBerita')->name('list.berita');
 Route::get('/beritaList', function () {
     return view('testing.beritaList');
 })->name('berita.list');
+
+Route::get('/beritaDetail', function () {
+    return view('testing.beritaDetail');
+})->name('berita.Detail');
+
+Route::get('/berandaSetelahLogin', function () {
+    return view('testing.berandaSetelahLogin');
+});
+
+Route::get('/dataBayi', function () {
+    return view('testing.dataBayi');
+});
