@@ -11,9 +11,9 @@ Route::get('/', 'BerandaController@index');
 Route::get('/about', 'BerandaController@about');
 Route::get('/kontak', 'BerandaController@kontak');
 
-Route::get('testauthbidan', function () {
-    return "Welkam " . auth()->guard('bidan')->user()->nama . " di Halaman Bidan";
-})->middleware('auth:bidan')->name('authBidan');
+// Route::get('', function () {
+//     return view('testing.AdminPanel');
+// })->middleware('auth:bidan')->name('authBidan');
 
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
@@ -22,8 +22,8 @@ Route::get('/testing', "testingController@index");
 //Bidan
 Route::group(['prefix' => 'bidan', 'middleware' => 'auth:bidan'], function () {
     Route::get('/', function () {
-        return 'ini root bidan';
-    });
+        return view('testing.AdminPanel'); 
+    })->name('authBidan');
     Route::view('/data-anak', 'livewire.anak')->name('data.anak');
     Route::view('/data-ibu', 'livewire.ibu')->name('data.ibu');
     //Status Kesehatan Anak
