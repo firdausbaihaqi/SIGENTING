@@ -21724,12 +21724,42 @@ video {
   border-color: rgba(66, 153, 225, var(--border-opacity));
 }
 
-.button {
-  height: 2.5rem;
+.input-search-full {
+  border-width: 2px;
+  --border-opacity: 1;
+  border-color: #e2e8f0;
+  border-color: rgba(226, 232, 240, var(--border-opacity));
+  --bg-opacity: 1;
+  background-color: #fff;
+  background-color: rgba(255, 255, 255, var(--bg-opacity));
+  height: 4rem;
   padding-left: 1.25rem;
   padding-right: 1.25rem;
+  padding-right: 4rem;
+  border-radius: 0.5rem;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  width: 100%;
+  transition-duration: 300ms;
+}
+
+.input-search-full:focus {
+  --border-opacity: 1;
+  border-color: #4299e1;
+  border-color: rgba(66, 153, 225, var(--border-opacity));
+}
+
+.button {
+  height: 2.5rem;
   text-align: center;
   border-radius: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .button {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
 }
 
 .button-cancel {
@@ -21976,7 +22006,7 @@ video {
 }
 
 .mobile-blocker {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100vw;
@@ -21993,6 +22023,60 @@ video {
   font-size: 1.5rem;
   display: grid;
   place-items: center;
+}
+
+.pc-blocker {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 50;
+  --bg-opacity: 1;
+  background-color: #4a5568;
+  background-color: rgba(74, 85, 104, var(--bg-opacity));
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  --text-opacity: 1;
+  color: #fff;
+  color: rgba(255, 255, 255, var(--text-opacity));
+  font-size: 1.5rem;
+  display: grid;
+  place-items: center;
+}
+
+.carousel-open:checked + .carousel-item {
+  position: static;
+  opacity: 100;
+}
+
+.carousel-item {
+  transition: opacity 0.6s ease-out;
+}
+
+#carousel-1:checked ~ .control-1,
+#carousel-2:checked ~ .control-2,
+#carousel-3:checked ~ .control-3 {
+  display: block;
+}
+
+.carousel-indicators {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  bottom: 2%;
+  left: 0;
+  right: 0;
+  text-align: center;
+  z-index: 10;
+}
+
+#carousel-1:checked ~ .control-1 ~ .carousel-indicators li:nth-child(1) .carousel-bullet,
+#carousel-2:checked ~ .control-2 ~ .carousel-indicators li:nth-child(2) .carousel-bullet,
+#carousel-3:checked ~ .control-3 ~ .carousel-indicators li:nth-child(3) .carousel-bullet {
+  color: #000;
+  /*Set to match the Tailwind colour you want the active one to be */
 }
 
 .card-adminPanel {
@@ -22020,7 +22104,6 @@ video {
   --bg-opacity: 1;
   background-color: #f7fafc;
   background-color: rgba(247, 250, 252, var(--bg-opacity));
-  width: 33.333333%;
   padding-top: 1rem;
   padding-bottom: 1rem;
   padding-left: 1.5rem;
@@ -22118,6 +22201,12 @@ video {
   min-width: 800px;
 }
 
+@media (max-width: 640px) {
+  .posts-card-link {
+    min-width: 300px;
+  }
+}
+
 .posts-card-container {
   --bg-opacity: 1;
   background-color: #fff;
@@ -22148,8 +22237,20 @@ video {
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
+@media (max-width: 640px) {
+  .posts-card-container {
+    height: 10rem;
+  }
+}
+
 .posts-card-img {
   grid-column: span 2 / span 2;
+}
+
+@media (max-width: 640px) {
+  .posts-card-img {
+    grid-column: span 5 / span 5;
+  }
 }
 
 .posts-card-info {
@@ -22158,6 +22259,75 @@ video {
   grid-column: span 3 / span 3;
   display: flex;
   flex-direction: column;
+}
+
+@media (max-width: 640px) {
+  .posts-card-info {
+    grid-column: span 1 / span 1;
+    position: absolute;
+  }
+}
+
+.posts-card-info .title {
+  margin-left: 1rem;
+  margin-top: 0.5rem;
+  font-size: 1.25rem;
+  --text-opacity: 1;
+  color: #000;
+  color: rgba(0, 0, 0, var(--text-opacity));
+}
+
+@media (max-width: 640px) {
+  .posts-card-info .title {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    margin-left: 1rem;
+    margin-bottom: 2.5rem;
+    font-size: 1.125rem;
+    --text-opacity: 1;
+    color: #fff;
+    color: rgba(255, 255, 255, var(--text-opacity));
+  }
+}
+
+.posts-card-info .tanggal {
+  margin-top: 1.5rem;
+  margin-left: 1rem;
+  --text-opacity: 1;
+  color: #4a5568;
+  color: rgba(74, 85, 104, var(--text-opacity));
+  font-size: 1rem;
+}
+
+@media (max-width: 640px) {
+  .posts-card-info .tanggal {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    margin-left: 1rem;
+    margin-bottom: 2rem;
+    --text-opacity: 1;
+    color: #fff;
+    color: rgba(255, 255, 255, var(--text-opacity));
+  }
+}
+
+.posts-card-info .detail {
+  height: 6rem;
+  margin-left: 1rem;
+  font-size: 0.875rem;
+  --text-opacity: 1;
+  color: #4a5568;
+  color: rgba(74, 85, 104, var(--text-opacity));
+  overflow: hidden;
+  margin-right: 3rem;
+}
+
+@media (max-width: 640px) {
+  .posts-card-info .detail {
+    display: none;
+  }
 }
 
 @media (min-width: 640px){
