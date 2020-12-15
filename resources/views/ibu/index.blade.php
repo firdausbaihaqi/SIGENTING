@@ -7,7 +7,7 @@
 <header class="flex justify-between items-center w-full mt-12 md:mt-32 mx-5 md:mx-16 mb-32 flex-wrap ">
 
     <div class="w-3/4 md:w-2/6">
-        <h1 class="text-2xl text-white md:text-black md:text-4xl font-medium">
+        <h1 class="text-2xl text-black md:text-4xl font-medium">
             Selamat Datang
             <br>
             Ibu <span class="font-semibold"> {{ ucfirst($auth->nama) }} </span>

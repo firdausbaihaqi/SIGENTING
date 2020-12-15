@@ -19,7 +19,7 @@
 
 </head>
 
-<body class="bg-blue-500 md:bg-white duration-300 overflow-x-hidden">
+<body class="bg-white duration-300 overflow-x-hidden">
 
     <div class="hidden md:block">
         <div class="pc-blocker">
