@@ -14,4 +14,9 @@ class StatusKesehatanAnak extends Model
     {
         return $this->BelongsTo('App\Models\Anak', 'id_anak');
     }
+
+    public function tracking()
+    {
+        return $this->hasOne('App\Models\Tracking');
+    }
 }

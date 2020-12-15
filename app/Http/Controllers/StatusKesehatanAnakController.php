@@ -33,10 +33,11 @@ class StatusKesehatanAnakController extends Controller
 
     public function store(Request $request)
     {
+        $status_stunting = $request->status_stunting;
         $berat = $request->berat_badan;
         $tinggi = $request->tinggi_badan;
         $lingkar_kepala = $request->lingkar_kepala;
-        $status_stunting = $this->isStunting($berat, $tinggi, $lingkar_kepala);
+        // $status_stunting = $this->isStunting($berat, $tinggi, $lingkar_kepala);
 
         $this->validate($request, [
             'berat_badan' => 'required|numeric',
@@ -71,15 +72,15 @@ class StatusKesehatanAnakController extends Controller
         return redirect()->route('ska.detail', $request->id_anak)->with(['success' => 'Data Status Kesehatan Anak Berhasil Diubah']);
     }
 
-    public function isStunting($berat, $tinggi, $lingkar_kepala)
-    {
-        $status_stunting = '';
-        if ($berat < 10 || $tinggi < 25 || $lingkar_kepala < 6) {
-            return $status_stunting = 'YA';
-        } else {
-            return $status_stunting = 'TIDAK';
-        }
-    }
+    // public function isStunting($berat, $tinggi, $lingkar_kepala)
+    // {
+    //     $status_stunting = '';
+    //     if ($berat < 10 || $tinggi < 25 || $lingkar_kepala < 6) {
+    //         return $status_stunting = 'YA';
+    //     } else {
+    //         return $status_stunting = 'TIDAK';
+    //     }
+    // }
 
     public function createOrUpdateTracking($id, $status_stunting)
     {
