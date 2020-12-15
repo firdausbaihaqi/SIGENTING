@@ -30,6 +30,15 @@
                             <input type="text" name="lingkar_kepala" class="form-control">
                             @error('lingkar_kepala') <span class="text-danger error">{{ $message }}</span>@enderror
                         </div>
+                        <div class="form-group">
+                            <label for="">Status Stunting</label>
+                            <select type="text" name="status_stunting" class="form-control"> 
+                            <option disabled selected value>Select an Option</option>
+                            <option value="YA">YA</option>
+                            <option value="TIDAK">TIDAK</option>
+                            </select>
+                            @error('status_stunting') <span class="text-danger error">{{ $message }}</span>@enderror
+                        </div>
                         <button class="btn btn-primary btn-sm">Simpan</button>
                     </form>
                 </div>

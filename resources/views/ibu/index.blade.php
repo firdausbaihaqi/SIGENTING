@@ -1,4 +1,4 @@
-{{-- {{ dd($anak) }} --}}
+
 @extends('layouts.app_ibu')
 
 @section('title' ,'Sigenting | Selamat Datang Di Halaman Ibu')
@@ -42,7 +42,7 @@
             @if ($item->id_anak != null)
             <div
                 class="w-full bg-blue-100 my-4 py-4 px-3 border-l-8 {{ $item->status_stunting == 'TIDAK' ? 'border-blue-500' : 'border-red-500' }} rounded-l-lg">
-                <h4 class="font-semibold text-lg mb-2"> {{ $item->nama }} </h4>
+                <h4 class="font-semibold text-lg mb-2"> {{ ucfirst($item->nama) }} </h4>
                 <p class="text-gray-600">
                     bulan ini dalam keadaan
                     <b>
@@ -53,9 +53,7 @@
                         @endif
                     </b> dengan keterangan sebagai
                     berikut : <br>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore autem quasi dolores obcaecati
-                    cum hic explicabo similique totam mollitia nesciunt officiis adipisci possimus, eos, quidem
-                    voluptatibus. Sint molestiae at veritatis?
+                    
                 </p>
             </div>
             @else

@@ -1,5 +1,5 @@
 @extends('layouts.app_ibu')
-
+{{-- {{ dd($anak) }} --}}
 @section('title' ,'Sigenting | Selamat Datang Di Halaman Ibu')
 
 @section('content')
@@ -38,11 +38,11 @@
         </div>
 
         <div class="mt-4 mx-1">
-
+            @foreach ($anak as $item)
             <div class="bg-white w-full rounded-2xl shadow-lg p-6 mt-4">
                 <div class="flex flex-col">
                     <div>
-                        <span class="text-xl font-semibold">Rizal Elsa Fany</span>
+                        <span class="text-xl font-semibold"> {{ $item->nama }} </span>
                         &nbsp; icon gender
                     </div>
                     <div class="text-sm text-gray-600">Umur : 2 bulan </div>
@@ -53,56 +53,41 @@
                     <div class="mt-4 flex flex-col items-center">
                         <div>icon bb</div>
                         <div class="text-red-500">
-                            <b class="text-3xl">3,8</b>
+                            <b class="text-3xl">{{ $item->berat_badan }}</b>
                             KG</div>
                         <div class="text-sm text-gray-600">Berat badan</div>
-                        <div class="text-sm text-red-500">Dibawah rata-rata</div>
+                        <div class="text-sm {{ ($item->berat_badan < 15) ? 'text-red-500' : ($item->berat_badan >= 15 && $item->berat_badan <= 25 ? 'text-blue-500' : 'text-red-500')}}">
+                            @if ($item->berat_badan < 15)
+                            Kekurangan
+                            @elseif ($item->berat_badan >= 15 && $item->berat_badan <= 25) 
+                            Normal
+                            @else
+                            Kelebihan BB
+                            @endif
+                        </div>
                     </div>
 
                     <div class="mt-4 flex flex-col items-center">
                         <div>icon tb</div>
                         <div class="text-blue-400">
-                            <b class="text-3xl">56,1</b>
+                            <b class="text-3xl">{{$item->tinggi_badan}}</b>
                             CM</div>
                         <div class="text-sm text-gray-600">Tinggi badan</div>
-                        <div class="text-sm text-blue-400">Ideal</div>
+                        <div class="{{ ($item->tinggi_badan < 15) ? 'text-red-500' : ($item->tinggi_badan >= 15 && $item->tinggi_badan <= 25 ? 'text-blue-500' : 'text-red-500')}}">
+                        @if ($item->tinggi_badan < 18)
+                            Kurang Tinggi
+                            @elseif ($item->tinggi_badan >= 18 && $item->tinggi_badan <= 25) 
+                            Ideal
+                            @else
+                            Terlalu tinggi
+                            @endif
+                        </div>
                     </div>
                 </div>
                 <!-- container data -->
 
             </div>
-
-            <div class="bg-white w-full rounded-2xl shadow-lg p-6 mt-4">
-                <div class="flex flex-col">
-                    <div>
-                        <span class="text-xl font-semibold">Rizal Elsa Fany</span>
-                        &nbsp; icon gender
-                    </div>
-                    <div class="text-sm text-gray-600">Umur : 2 bulan </div>
-                </div>
-
-                <!-- container data -->
-                <div class="flex justify-around">
-                    <div class="mt-4 flex flex-col items-center">
-                        <div>icon bb</div>
-                        <div class="text-red-500">
-                            <b class="text-3xl">3,8</b>
-                            KG</div>
-                        <div class="text-sm text-gray-600">Berat badan</div>
-                        <div class="text-sm text-red-500">Dibawah rata-rata</div>
-                    </div>
-
-                    <div class="mt-4 flex flex-col items-center">
-                        <div>icon tb</div>
-                        <div class="text-blue-400">
-                            <b class="text-3xl">56,1</b>
-                            CM</div>
-                        <div class="text-sm text-gray-600">Tinggi badan</div>
-                        <div class="text-sm text-blue-400">Ideal</div>
-                    </div>
-                </div>
-                <!-- container data -->
-            </div>
+            @endforeach
         </div>
     </div>
 </section>

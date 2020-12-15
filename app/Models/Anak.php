@@ -21,4 +21,10 @@ class Anak extends Model
     {
         return $this->hasOne('App\Models\StatusKesehatanAnak');
     }
+
+    public function tracking()
+    {
+        return $this->hasMany('App\Models\Tracking');
+    }
+    
 }

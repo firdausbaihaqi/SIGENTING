@@ -24,19 +24,19 @@
         </div>
         <div class="navigation-links">
             <a href="" class="navigation-link">Home</a>
-            <a href="" class="navigation-link">Data Postingan</a>
-            <a href="" class="navigation-link">Data Ibu</a>
+            <a href="{{route('post.index')}}" class="navigation-link">Data Postingan</a>
+            <a href="{{route('data.ibu')}}" class="navigation-link">Data Ibu</a>
             <div class="dropdown">
-                <a href="#" class="dropdown-trigger">
+                <a href="" class="dropdown-trigger">
                     Data Anak
                     <svg class="w-4 h-4 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                     </svg>
                 </a>
                 <div class="dropdown-content duration-500">
-                    <a href="" class="navigation-link">List Data Anak</a>
+                    <a href="{{route('data.anak')}}" class="navigation-link">List Data Anak</a>
                     <a href="" class="navigation-link">Laporan</a>
-                    <a href="" class="navigation-link">Tracking</a>
+                    <a href="{{route('tracking')}}" class="navigation-link">Tracking</a>
                 </div>
             </div>
             <a href="{{ route('logout') }}" onclick="event.preventDefault();

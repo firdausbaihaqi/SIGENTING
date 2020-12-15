@@ -19,11 +19,12 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/testing', "testingController@index");
 
+//Bidan
 Route::group(['prefix' => 'bidan', 'middleware' => 'auth:bidan'], function () {
     Route::get('/', function () {
         return 'ini root bidan';
     });
-    Route::view('/data-anak', 'livewire.anak');
+    Route::view('/data-anak', 'livewire.anak')->name('data.anak');
     Route::view('/data-ibu', 'livewire.ibu')->name('data.ibu');
     //Status Kesehatan Anak
     Route::view('/status-kesehatan-anak', 'livewire.ska')->name('ska.index');
@@ -39,6 +40,9 @@ Route::group(['prefix' => 'bidan', 'middleware' => 'auth:bidan'], function () {
     Route::post('/status-kesehatan-ibu/ibu/{id}/create', 'StatusKesehatanIbuController@store')->name('ski.store');
     Route::get('/status-kesehatan-ibu/ibu/{id}/edit/{status_kesehatan_ibu:id}', 'StatusKesehatanIbuController@edit')->name('ski.edit');
     Route::patch('/status-kesehatan-ibu/ibu/{id}/update/{status_kesehatan_ibu:id}', 'StatusKesehatanIbuController@update')->name('ski.update');
+    //Tracking anak
+    Route::view('/tracking', 'livewire.tracking')->name('tracking');
+    Route::view('/laporan', 'livewire.laporan')->name('laporan');
 });
 //Post Untuk Bidan
 Route::group(['prefix' => 'bidan/posts', 'middleware' => 'auth:bidan'], function () {
@@ -50,10 +54,11 @@ Route::group(['prefix' => 'bidan/posts', 'middleware' => 'auth:bidan'], function
     Route::delete('{post:id}/delete', 'PostController@destroy')->name('post.delete');
 });
 
-
+// Ibu
 Route::group(['prefix' => 'ibu',  'middleware' => 'auth:ibu'], function () {
     Route::get('/', 'IbuController@index')->name('ibu.index');
     Route::get('/data-anak', 'IbuController@data_anak')->name('ibu.data.anak');
+    Route::get('/artikel', 'IbuController@artikel')->name('ibu.artikel');
 });
 
 // Route::view('/status-kesehatan-anak/detail/{id}', 'livewire.ska_detail')->name('ska.detail');

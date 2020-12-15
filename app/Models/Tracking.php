@@ -13,4 +13,9 @@ class Tracking extends Model
     {
         return $this->BelongsTo('App\Models\Status_Kesehatan_Anak', 'id_status_kesehatan_anak');
     }
+
+    public function anak()
+    {
+        return $this->belongsTo('App\Models\Anak','id_anak');
+    }
 }
