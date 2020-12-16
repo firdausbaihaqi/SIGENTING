@@ -13,11 +13,15 @@ class IbuController extends Controller
     {
         $auth = auth()->guard()->user();
         // $anak = Anak::where('id_ibu', $auth->id)->get();
-        $anak = Anak::select(['anak.id as id_anak','anak.nama as nama','tracking.status_stunting as status_stunting'])
+        $anak = Anak::select(['anak.id as id_anak','anak.nama as nama','tracking.status_stunting as status_stunting','status_kesehatan_anak.keterangan','status_kesehatan_anak.updated_at as bulan periksa'])
                 ->leftJoin('tracking','anak.id','=','tracking.id_anak')
+                ->join('status_kesehatan_anak','status_kesehatan_anak.id_anak','=','anak.id')
                 ->where('anak.id_ibu' , $auth->id)
-                ->distinct()
-                ->orderBy('anak.id')->get();
+                ->orderBy('status_kesehatan_anak.created_at','DESC')
+                ->groupBy('anak.id')
+                // ->latest('status_kesehatan_anak.created_at')
+                ->get();
+                // dd($anak);
         return view('ibu.index', compact('auth', 'anak'));
     }
 

@@ -30,6 +30,7 @@
                                     <th class="th-md">Berat Badan</th>
                                     <th class="th-md">Tinggi Badan</th>
                                     <th class="th-md">Lingkar Kepala</th>
+                                    <th class="th-md">Keterangan</th>
                                     <th class="th-md">Action</th>
                                 </tr>
                             </thead>
@@ -43,6 +44,7 @@
                                     <td>{{ $item->berat_badan }}</td>
                                     <td>{{ $item->tinggi_badan }}</td>
                                     <td>{{ $item->lingkar_kepala }}</td>
+                                    <td>{{ $item->keterangan }}</td>
                                     <td>
                                         <a href="{{route('ska.edit', [$id , $item->id])}}"
                                             class="btn btn-warning btn-sm">Edit</a>

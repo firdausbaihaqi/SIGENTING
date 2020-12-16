@@ -31,6 +31,11 @@
                             @error('lingkar_kepala') <span class="text-danger error">{{ $message }}</span>@enderror
                         </div>
                         <div class="form-group">
+                            <label for="">Keterangan</label>                            
+                            <textarea name="keterangan" class="form-control"></textarea> 
+                            @error('keterangan') <span class="text-danger error">{{ $message }}</span>@enderror
+                        </div>
+                        <div class="form-group">
                             <label for="">Status Stunting</label>
                             <select type="text" name="status_stunting" class="form-control"> 
                             <option disabled selected value>Select an Option</option>

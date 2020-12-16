@@ -21,7 +21,7 @@ class StatusKesehatanAnakController extends Controller
 
     public function show($id)
     {
-        $ska = StatusKesehatanAnak::with('anak')->where('id_anak', $id)->get();
+        $ska = StatusKesehatanAnak::with('anak')->where('id_anak', $id)->latest()->get();
         return view('livewire.bidan.ska.detail', compact('ska', 'id'));
     }
 
@@ -37,12 +37,14 @@ class StatusKesehatanAnakController extends Controller
         $berat = $request->berat_badan;
         $tinggi = $request->tinggi_badan;
         $lingkar_kepala = $request->lingkar_kepala;
+        $keterangan = $request->keterangan;
         // $status_stunting = $this->isStunting($berat, $tinggi, $lingkar_kepala);
 
         $this->validate($request, [
             'berat_badan' => 'required|numeric',
             'tinggi_badan' => 'required|numeric',
-            'lingkar_kepala' => 'required|numeric'
+            'lingkar_kepala' => 'required|numeric',
+            'keterangan' => 'required'
         ]);
 
         StatusKesehatanAnak::create([
@@ -50,6 +52,7 @@ class StatusKesehatanAnakController extends Controller
             'berat_badan' => $request->berat_badan,
             'tinggi_badan' => $request->tinggi_badan,
             'lingkar_kepala' => $request->lingkar_kepala,
+            'keterangan' => $request->keterangan,
         ]);
         $this->createOrUpdateTracking($request->id_anak, $status_stunting);
         return redirect()->route('ska.detail', $request->id_anak)->with(['success' => 'Data Status Kesehatan Anak Berhasil Disimpan']);
