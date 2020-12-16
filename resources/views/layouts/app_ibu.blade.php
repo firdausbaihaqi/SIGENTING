@@ -21,11 +21,7 @@
 
 <body class="{{(request()->is('ibu/artikel')) ? 'bg-white' : 'bg-blue-500'}} duration-300 overflow-x-hidden">
 
-    <div class="hidden md:block">
-        <div class="pc-blocker">
-            Halaman ini hanya dapat di akses melalui perangkat mobile :(
-        </div>
-    </div>
+   
     <div class="{{(request()->is('ibu/artikel')) ? 'mx-2 pb-10' : ''}}">
         @yield('content')
     </div>
