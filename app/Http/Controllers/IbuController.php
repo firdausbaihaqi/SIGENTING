@@ -32,8 +32,16 @@ class IbuController extends Controller
 
     public function artikel()
     {
-        $artikel = Post::get();
+        $artikel = Post::latest()->take(4)->get();
+        // dd($artikel);
         return view('ibu.artikel', compact('artikel'));
+    }
+
+    public function artikelDetail($slug)
+    {
+        $artikel = Post::where('slug','=' ,$slug)->get();
+        // dd($artikel);
+        return view('ibu.artikelDetail', compact('artikel'));
     }
     
 }

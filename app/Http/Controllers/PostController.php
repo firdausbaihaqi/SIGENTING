@@ -83,7 +83,7 @@ class PostController extends Controller
 
     public function listBerita()
     {
-        $post = Post::latest()->get();
+        $post = Post::latest()->latest()->take(4)->get();
         return view('berita.index', compact('post'));
     }
 }
