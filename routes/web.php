@@ -11,11 +11,6 @@ Route::get('/', 'BerandaController@index');
 Route::get('/about', 'BerandaController@about');
 Route::get('/kontak', 'BerandaController@kontak');
 
- Route::get('', function () {
-     return view('testing.AdminPanel');
- })->middleware('auth:bidan')->name('authBidan');
-
-
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/testing', "testingController@index");
@@ -23,7 +18,7 @@ Route::get('/testing', "testingController@index");
 //Bidan
 Route::group(['prefix' => 'bidan', 'middleware' => 'auth:bidan'], function () {
     Route::get('/', function () {
-        return view('testing.AdminPanel'); 
+        return view('livewire.bidan.index'); 
     })->name('authBidan');
     Route::view('/data-anak', 'livewire.anak')->name('data.anak');
     Route::view('/data-ibu', 'livewire.ibu')->name('data.ibu');
@@ -44,6 +39,7 @@ Route::group(['prefix' => 'bidan', 'middleware' => 'auth:bidan'], function () {
     //Tracking anak
     Route::view('/tracking', 'livewire.tracking')->name('tracking');
     Route::view('/laporan', 'livewire.laporan')->name('laporan');
+    
 });
 //Post Untuk Bidan
 Route::group(['prefix' => 'bidan/posts', 'middleware' => 'auth:bidan'], function () {
