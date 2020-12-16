@@ -18,6 +18,7 @@
 </head>
 
 <body class="bg-gray-100">
+
     <div class="center mt-56">
         
             <h1 class="m-8 text-2xl">Admin Panel</h1>

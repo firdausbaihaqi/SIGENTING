@@ -31,7 +31,9 @@
 
         <div class="card-login fixed bottom-0 md:relative mb-8 md:mb-0 mt-12 md:mt-32 mx-6 md:w-1/3 ">
             <div class="hidden md:block">
-                <h1 class="title">Ini Logo</h1>
+                <center>
+                    <img src="{{asset('img/logo.png')}}" class="w-24">
+                </center>
             </div>
             <p class="text-gray-700 mt-6">mohon masuk terlebih dahulu untuk melanjutkan</p>
             <form action="{{ route('login') }}" method="POST" class="mt-4 block">
