@@ -34,3 +34,29 @@
       @apply text-white;
   }
 }
+
+// ibu
+
+.nav-link{
+    @apply mx-2 py-2 px-4 duration-200 text-white grid place-items-center;
+
+    .nav-link-svg{
+        @apply w-8 text-blue-300 fill-current;
+        &:hover{
+            @apply text-blue-500 
+        }
+    }
+
+    .nav-link-svg-active{
+        @apply w-8 text-blue-500 fill-current;
+    }
+
+    .nav-link-txt{
+        @apply text-xs text-blue-400;
+    }
+
+    .nav-link-txt-active{
+        @apply text-xs text-blue-500;
+    }
+}
+
