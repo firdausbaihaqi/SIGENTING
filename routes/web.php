@@ -60,6 +60,7 @@ Route::group(['prefix' => 'ibu',  'middleware' => 'auth:ibu'], function () {
     Route::get('/', 'IbuController@index')->name('ibu.index');
     Route::get('/data-anak', 'IbuController@data_anak')->name('ibu.data.anak');
     Route::get('/artikel', 'IbuController@artikel')->name('ibu.artikel');
+    Route::get('/artikel/{slug}', 'IbuController@artikelDetail')->name('ibu.artikel.detail');
 });
 
 // Route::view('/status-kesehatan-anak/detail/{id}', 'livewire.ska_detail')->name('ska.detail');

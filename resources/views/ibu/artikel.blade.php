@@ -7,58 +7,22 @@
     <section class="hidden md:inline">
         <div class="headline-container">
             <!-- bagian kiri -->
-            <a href="#" class="col-span-3 posts-container" style="height: 50vh;">
-
-                <div class="posts-bg" style="background: url(https://images.pexels.com/photos/57690/pexels-photo-57690.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
-                background-size: cover;">
-                    <div class="overlay-gray"></div>
-                </div>
-                <div class="posts-info text-xl lg:text-2xl text-white">
-                    <p>Judul Artikel</p>
-                    <p>Tanggal Upload</p>
-                </div>
-            </a>
             <!-- akhir bagian kiri -->
             <!-- bagian kanan -->
             <div class="col-span-4 grid grid-cols-2 gap-1">
-                <a href="#" class="posts-container">
-                    <div class="posts-bg" style="background: url(https://images.pexels.com/photos/57690/pexels-photo-57690.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940); background-size: cover;">
+                @foreach ($artikel as $item)
+                <a href="" class="posts-container">
+                    <div class="posts-bg"
+                        style="background: url(https://images.pexels.com/photos/57690/pexels-photo-57690.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940); background-size: cover;">
                         <div class="overlay-gray"></div>
                     </div>
                     <div class="posts-info-secondary text-sm lg:text-lg text-white">
-                        <p>Judul Artikel</p>
-                        <p>Tanggal Upload</p>
+                        <p>{{$item->judul}}</p>
+                        <p>{{$item->created_at}}</p>
                     </div>
                 </a>
-                <a href="#" class="posts-container">
-                    <div class="posts-bg" style="background: url(https://images.pexels.com/photos/57690/pexels-photo-57690.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940); background-size: cover;">
-                        <div class="overlay-gray"></div>
-                    </div>
-                    <div class="posts-info-secondary text-sm lg:text-lg text-white">
-                        <p>Judul Artikel</p>
-                        <p>Tanggal Upload</p>
-                    </div>
-                </a>
-                <a href="#" class="posts-container">
-                    <div class="posts-bg" style="background: url(https://images.pexels.com/photos/57690/pexels-photo-57690.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940); background-size: cover;">
-                        <div class="overlay-gray"></div>
-                    </div>
-                    <div class="posts-info-secondary text-sm lg:text-lg text-white">
-                        <p>Judul Artikel</p>
-                        <p>Tanggal Upload</p>
-                    </div>
-                </a>
-                <a href="#" class="posts-container">
-                    <div class="posts-bg" style="background: url(https://images.pexels.com/photos/57690/pexels-photo-57690.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940); background-size: cover;">
-                        <div class="overlay-gray"></div>
-                    </div>
-                    <div class="posts-info-secondary text-sm lg:text-lg text-white">
-                        <p>Judul Artikel</p>
-                        <p>Tanggal Upload</p>
-                    </div>
-                </a>
+                @endforeach
                 <!-- akhir bagian kanan -->
-
             </div>
         </div>
 
@@ -84,8 +48,8 @@
             
         </div> -->
         <div class="w-3/4 grid">
-
-            <a href="#" class="posts-card-link">
+            @foreach ($artikel as $item)
+            <a href="{{route('ibu.artikel.detail', $item->slug)}}" class="posts-card-link">
                 <div class="posts-card-container">
 
                     <div class="posts-card-img" style="background: url(https://images.pexels.com/photos/57690/pexels-photo-57690.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
@@ -95,45 +59,21 @@
 
                     <div class="posts-card-info">
                         <div class="title lg:text-3xl">
-                            <p>Judul Artikel</p>
+                            <p> {{ $item->judul }} </p>
                         </div>
                         <div class="detail lg:text-base">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga debitis velit nobis culpa molestiae, iusto sint quod eos eum ullam a iure nihil maxime deserunt laboriosam eveniet impedit est veniam! Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                            <p> {!! Str::limit($item->isi,10) !!}
                             </p>
                         </div>
                         <div class="tanggal lg:text-lg">
-                            <p>Tanggal</p>
+                            <p>Di Posting: {{ $item->created_at->translatedFormat('d F Y') }}</p>
                         </div>
 
                     </div>
 
                 </div>
             </a>
-
-            <a href="#" class="posts-card-link">
-                <div class="posts-card-container">
-
-                    <div class="posts-card-img" style="background: url(https://images.pexels.com/photos/57690/pexels-photo-57690.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
-                background-size: cover;">
-                        <div class="overlay-gray"></div>
-                    </div>
-
-                    <div class="posts-card-info">
-                        <div class="title lg:text-3xl">
-                            <p>Judul Artikel</p>
-                        </div>
-                        <div class="detail lg:text-base">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga debitis velit nobis culpa molestiae, iusto sint quod eos eum ullam a iure nihil maxime deserunt laboriosam eveniet impedit est veniam! Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                            </p>
-                        </div>
-                        <div class="tanggal lg:text-lg">
-                            <p>Tanggal</p>
-                        </div>
-
-                    </div>
-
-                </div>
-            </a>
+            @endforeach
         </div>
 
 
