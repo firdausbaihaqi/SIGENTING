@@ -24,13 +24,13 @@
         
 
         <div class="card-adminPanel mt-4">
-            <a href="#" class="button-admin bg-blue-400 hover:bg-blue-500">
+            <a href="/bidan/data-ibu" class="button-admin bg-blue-400 hover:bg-blue-500">
                 Data Ibu
             </a>
-            <a href="#" class="button-admin bg-green-400 hover:bg-green-500">
+            <a href="/bidan/data-anak" class="button-admin bg-green-400 hover:bg-green-500">
                 Data Bayi
             </a>
-            <a href="#" class="button-admin bg-orange-400 hover:bg-orange-500">
+            <a href="/bidan/posts" class="button-admin bg-orange-400 hover:bg-orange-500">
                 Post
             </a>
         </div>

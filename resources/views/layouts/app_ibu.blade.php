@@ -19,7 +19,7 @@
 
 </head>
 
-<body class="{{(request()->is('ibu/artikel')) ? 'bg-white' : 'bg-blue-500'}} duration-300 overflow-x-hidden">
+<body class="{{(request()->is('ibu/artikel')) ? 'bg-white' : 'bg-blue-500'}} duration-300 overflow-x-hidden container">
 
    
     <div class="{{(request()->is('ibu/artikel')) ? 'mx-2 pb-10' : ''}}">
@@ -68,6 +68,7 @@
 
 
     <script src="{!! mix('js/app.js') !!}"></script>
+        @yield('custom-scripts')
 </body>
 
 </html>
