@@ -49,8 +49,8 @@
                         Tidak Stunting
                         @endif
                     </b> dengan keterangan sebagai
-                    berikut : <br>
-
+                    berikut : {{ $item->keterangan }} <br>
+                    
                 </p>
             </div>
             @else
