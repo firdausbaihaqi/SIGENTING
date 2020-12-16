@@ -7,7 +7,7 @@
 <header class="flex justify-between items-center w-full mt-12 md:mt-32 mx-5 md:mx-16 mb-32 flex-wrap ">
 
     <div class="w-3/4 md:w-2/6">
-        <h1 class="text-2xl text-black md:text-4xl font-medium">
+        <h1 class="text-2xl text-white md:text-4xl font-medium">
             Selamat Datang
             <br>
             Ibu <span class="font-semibold"> {{ ucfirst($auth->nama) }} </span>
@@ -19,7 +19,7 @@
         src="{{ asset('img/landing.svg') }}">
 
 </header>
-<section class="w-screen mt-20 pb-20  md:hidden bg-white rounded-tr-3xl rounded-tl-3xl">
+<section class="w-screen min-h-screen mt-20 pb-20  md:hidden bg-white rounded-tr-3xl rounded-tl-3xl">
     <div class="mx-8 pt-8">
         <div class="pt-2 block text-gray-600">
             <input class="input-search-full text-sm focus:outline-none " type="search" name="search"

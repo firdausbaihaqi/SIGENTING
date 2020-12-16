@@ -6,12 +6,11 @@
 <header class="flex justify-between items-center w-full mt-12 md:mt-32 mx-5 md:mx-16 mb-32 flex-wrap ">
 
     <div class="w-3/4 md:w-2/6">
-        <h1 class="text-2xl text-white md:text-black md:text-4xl font-medium">
+        <h1 class="text-2xl text-white md:text-4xl font-medium">
             Data Kesehatan
             <br>
             Bayi
         </h1>
-
     </div>
 
     <img class="fixed right-0 mt-16 md:mt-8 transform md:scale-125 -mr-24 md:mr-0" style="z-index: -1;"
