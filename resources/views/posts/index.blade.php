@@ -33,7 +33,7 @@
                                             <td>{{ $item->id }}</td>
                                             <td>{{ $item->judul }}</td>
                                             <td>
-                                                <button class="btn btn-primary btn-sm">Detail</button>
+                                                
                                                 <a href="{{route('post.edit', $item->slug )}}" class="btn btn-warning btn-sm">Edit</a>
                                                 <a class="btn btn-danger btn-sm" onclick="event.preventDefault();
                                                     document.getElementById('delete-form-{{ $item->id }}').submit();">Delete</a>

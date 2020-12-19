@@ -22,12 +22,16 @@ class PostController extends Controller
     {
         $this->validate($request, [
             'judul' => 'required|string',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'isi' => 'required'
         ]);
+        $imageName = time().'.'.$request->image->extension();  
+        
 
         Post::create([
             'judul' => $request->judul,
             'slug' => \Str::slug($request->judul),
+            'image' => $request->image->move(public_path('images'), $imageName),
             'isi' => $request->isi
         ]);
         return redirect()->route('post.index')->with(['success' => 'Artikel disimpan']);

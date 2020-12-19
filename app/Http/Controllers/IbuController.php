@@ -21,7 +21,7 @@ class IbuController extends Controller
                 ->groupBy('anak.id')
                 // ->latest('status_kesehatan_anak.created_at')
                 ->get();
-                // dd($anak);
+                dd($anak);
         return view('ibu.index', compact('auth', 'anak'));
     }
 

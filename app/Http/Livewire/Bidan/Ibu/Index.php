@@ -3,6 +3,8 @@
 namespace App\Http\Livewire\Bidan\Ibu;
 
 use App\Models\Ibu;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -11,7 +13,7 @@ class Index extends Component
 
     use WithPagination;
     protected $paginationTheme = 'bootstrap';
-    public $nama, $alamat, $no_hp, $id_ibu;
+    public $nama, $alamat, $no_hp, $id_ibu,$password;
     public $updateMode = false;
     public  $search = '';
 
@@ -19,7 +21,7 @@ class Index extends Component
         'nama' => 'required',
         'alamat' => 'required',
         'no_hp' => 'required|numeric',
-
+        'username' => 'required',
     ];
 
 
@@ -37,6 +39,7 @@ class Index extends Component
         $this->nama = '';
         $this->alamat = '';
         $this->no_hp = '';
+        $this->password = '';
     }
 
     public function store()
@@ -45,9 +48,15 @@ class Index extends Component
             'nama' => 'required',
             'alamat' => 'required',
             'no_hp' => 'required|numeric',
-
         ]);
-        Ibu::create($validateData);
+        
+        $this->password = bcrypt($this->no_hp);
+        dd($this->no_hp);
+        Ibu::create(['nama'     => $this->nama, 
+                    'alamat'    => $this->alamat, 
+                    'no_hp'     => $this->no_hp,
+                    'password'  => $this->password,
+                    ]);
         session()->flash('message', 'Data Ibu Berhasil Ditambahkan');
         $this->resetInput();
         $this->emit('userStore');

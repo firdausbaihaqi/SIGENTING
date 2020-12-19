@@ -54,7 +54,7 @@
             <a href="{{route('ibu.artikel.detail', $item->slug)}}" class="posts-card-link">
                 <div class="posts-card-container">
 
-                    <div class="posts-card-img" style="background: url(https://images.pexels.com/photos/57690/pexels-photo-57690.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+                    <div class="posts-card-img" style="background: url({{asset('/image/'.$item->image)}});
                 background-size: cover;">
                         <div class="overlay-gray"></div>
                     </div>

@@ -15,7 +15,7 @@
                         <label for="exampleFormControlInput1" class="label">Nama</label>
                         <input type="text" class="input-text" id="exampleFormControlInput1" placeholder="Masukan Nama" wire:model="nama">
                         @error('nama') <span class="text-danger error">{{ $message }}</span>@enderror
-                    </div>
+                    </div>                    
                     <div class="form-groups">
                         <label for="exampleFormControlInput1" class="label">Alamat</label>
                         <input type="text" class="input-text" id="exampleFormControlInput2" placeholder="Masukan Alamat" wire:model="alamat">

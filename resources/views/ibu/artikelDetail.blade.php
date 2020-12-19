@@ -4,8 +4,7 @@
 @section('content')
 
 <body class="bg-gray-100 mx-32 md:mx-32">
-    <section class="mt-12">
-
+    <section class="mt-12">    
         <div class="headline-container" style="height: 50vh; background: url(https://st3.depositphotos.com/3227011/15104/i/1600/depositphotos_151040356-stock-photo-top-view-laptop-document-office.jpg);
         background-size:cover;">
         </div>

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
+use Illuminate\Validation\ValidationException;
 
 class LoginController extends Controller
 {
@@ -41,7 +42,14 @@ class LoginController extends Controller
 
     public function username()
     {
-        return 'username';
+        $username = 'no_hp';
+        return $username;
+    }
+    protected function sendFailedLoginResponse(Request $request)
+    {
+    throw ValidationException::withMessages([
+        'no_hp' => [trans('auth.failed')],
+    ]);
     }
 
     public function login(Request $request)
@@ -58,7 +66,7 @@ class LoginController extends Controller
         ])) {
             return redirect()->route('authBidan');
         } else if (auth()->guard('ibu')->attempt([
-            'username' => $request->input('username'),
+            'no_hp' => $request->input('username'),
             'password' => $request->input('password')
         ])) {
             return redirect()->route('ibu.index');
